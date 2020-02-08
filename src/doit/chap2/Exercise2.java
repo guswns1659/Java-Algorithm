@@ -1,4 +1,4 @@
-package doit.Ch2;
+package doit.chap2;
 
 import java.util.Arrays;
 

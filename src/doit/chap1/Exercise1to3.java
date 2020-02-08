@@ -1,4 +1,4 @@
-package doit.Ch1;
+package doit.chap1;
 
 import java.util.Scanner;
 

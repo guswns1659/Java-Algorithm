@@ -1,4 +1,4 @@
-package doit.Ch2;
+package doit.chap2;
 
 public class Practice8 {
     private char[] numbers;

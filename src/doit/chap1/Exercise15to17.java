@@ -1,4 +1,4 @@
-package doit.Ch1;
+package doit.chap1;
 
 public class Exercise15to17 {
     public static void main(String[] args) {
