@@ -1,16 +1,16 @@
 import java.util.Arrays;
 
+
 public class SelfPractice {
     public static void main(String[] args) {
         System.out.println(isPrime());
-        int[] ints = {1,2,3,4,5,6,7};
-        System.out.println(binarySearchTest(ints, 7));
-        System.out.println(Arrays.binarySearch(ints, 7));
+        int[] ints = {1,3,5,7,9,11};
+        System.out.println(binarySearch(ints, 100));
     }
 
-    private static int binarySearchTest(int[] ints, int key) {
-        int left = 0;
+    private static int binarySearch(int[] ints, int key) {
         int right = ints.length - 1;
+        int left = 0;
 
         do {
             int middle = (left + right) / 2;
@@ -21,7 +21,6 @@ public class SelfPractice {
                 left = middle + 1;
             }
         } while (left <= right);
-
         return -1;
     }
 
