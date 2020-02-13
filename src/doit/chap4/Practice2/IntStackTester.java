@@ -15,7 +15,7 @@ public class IntStackTester {
 
         while (true) {
             System.out.println("현재 데이터 수 : "+ intStack.size() + " / " +
-                    intStack.capactity());
+                    intStack.capacity());
             System.out.print(" 1. 푸시 2. 팝 3. 피크 4. 덤프 0. 종료 : ");
 
             int menu = scanner.nextInt();

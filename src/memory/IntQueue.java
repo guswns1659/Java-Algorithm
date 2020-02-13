@@ -59,4 +59,35 @@ public class IntQueue {
         return -1;
     }
 
+    public void clear() {
+        size = front = rear = 0;
+    }
+
+    public int size() {
+        return size;
+    }
+
+    public int capacity() {
+        return max;
+    }
+
+    public boolean isEmpty() {
+        return size <= 0;
+    }
+
+    public boolean isFull() {
+        return size >= max;
+    }
+
+    public void dump() {
+        if (size < 1) System.out.println("큐가 비었습니다.");
+        else {
+            for (int count = 0; count < size; count++) {
+                int index = (count + front) % max;
+                System.out.print(queue[index] + " ");
+            }
+            System.out.println();
+        }
+    }
+
 }

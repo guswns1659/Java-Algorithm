@@ -6,13 +6,11 @@ public class IntStack {
     private int[] stack;
 
     public static class EmptyIntStackException extends RuntimeException {
-
         public EmptyIntStackException() {
         }
     }
 
     public static class OverflowIntStackException extends RuntimeException {
-
         public OverflowIntStackException() {
         }
     }
@@ -58,7 +56,26 @@ public class IntStack {
         return pointer;
     }
 
-    public int capactity() {
+    public int capacity() {
         return max;
     }
+
+    public boolean isEmpty() {
+        return pointer <= 0;
+    }
+
+    public boolean isFull() {
+        return pointer >= max;
+    }
+
+    public void dump() {
+        if (pointer < 1) System.out.println("스택이 비었습니다.");
+        else {
+            for (int index = 0; index < pointer; index++) {
+                System.out.print(stack[index]+" ");
+            }
+            System.out.println();
+        }
+    }
+
 }
