@@ -2,11 +2,10 @@ package memory;
 
 public class Prime {
     public static void main(String[] args) {
-        Prime prime = new Prime();
-        prime.isPrime();
+        System.out.println(isPrime());
     }
 
-    public int isPrime() {
+    public static int isPrime() {
         int counter = 0;
         int numberOfPrime = 0;
         int[] prime = new int[500];

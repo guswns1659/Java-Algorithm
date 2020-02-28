@@ -42,7 +42,7 @@ public class IntStack {
 
     public int indexOf(int value) {
         if (pointer < 1) throw new EmptyIntStackException();
-        for (int index = pointer - 1; pointer >= 0; pointer--) {
+        for (int index = pointer - 1; index >= 0; index--) {
             if (stack[index] == value) return index;
         }
         return -1;

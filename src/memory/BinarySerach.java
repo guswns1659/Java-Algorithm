@@ -45,7 +45,7 @@ public class BinarySerach {
             else {
                 left = middle + 1;
             }
-        } while (left > right);
+        } while (left <= right);
 
         return -1;
     }
