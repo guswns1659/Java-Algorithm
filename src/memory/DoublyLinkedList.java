@@ -1,24 +1,8 @@
-package selfPractice;
+package memory;
 
 import java.util.Comparator;
 
 public class DoublyLinkedList<E> {
-    class Node<E> {
-        private E data;
-        private Node<E> prev;
-        private Node<E> next;
-
-        Node() {
-            data = null;
-            prev = next = this;
-        }
-
-        Node(E data, Node<E> prev, Node<E> next) {
-            this.data = data;
-            this.prev = prev;
-            this.next = next;
-        }
-    }
 
     private Node<E> head;
     private Node<E> current;
@@ -34,7 +18,7 @@ public class DoublyLinkedList<E> {
     // 입력한 데이터 검색
     public E search(E data, Comparator<? super E> c) {
         Node<E> ptr = head.next;
-        while(ptr != head) {
+        while (ptr != head) {
             if (c.compare(data, ptr.data) == 0) {
                 current = ptr;
                 return ptr.data;
@@ -45,7 +29,7 @@ public class DoublyLinkedList<E> {
     }
 
     // 선택 노드 출력
-    public void printCurrentNode() {
+    public void printCurrent() {
         if (isEmpty()) System.out.println("선택 노드가 없습니다.");
         else System.out.println(current.data);
     }
@@ -54,17 +38,17 @@ public class DoublyLinkedList<E> {
     public void dump() {
         Node<E> ptr = head.next;
 
-        while(ptr != head) {
+        while (ptr != head) {
             System.out.println(ptr.data);
             ptr = ptr.next;
         }
     }
 
     // 모든 노드를 거꾸로 출력
-    public void dumpReverse() {
+    public void reverseDump() {
         Node<E> ptr = head.prev;
 
-        while(ptr != head) {
+        while (ptr != head) {
             System.out.println(ptr.data);
             ptr = ptr.prev;
         }
@@ -83,6 +67,7 @@ public class DoublyLinkedList<E> {
         return current.next == head;
     }
 
+
     // 선택 노드를 하나 앞으로 이동
     public boolean prev() {
         if (isEmpty() || isHead()) {
@@ -92,13 +77,14 @@ public class DoublyLinkedList<E> {
         return true;
     }
 
-    private boolean isHead() {
+    public boolean isHead() {
         return current.prev == head;
     }
 
     // 선택 노드의 바로 뒤에 노드를 삽입
+    // current라는 포인터가 있기 때문에 삽입이 쉽다.
     public void add(E data) {
-        Node<E> node = new Node<>(data, current, current.next);
+        Node<E> node = new Node<E>(data, current, current.next);
         current.next.prev = node;
         current.next = node;
         current = node;
@@ -129,9 +115,10 @@ public class DoublyLinkedList<E> {
     // 노드 p를 삭제
     public void remove(Node<E> p) {
         Node<E> ptr = head.next;
-        while(ptr != head) {
+
+        while (ptr != head) {
             if (ptr == p) {
-                current = p;
+                current = ptr;
                 removeCurrentNode();
                 break;
             }
@@ -153,8 +140,25 @@ public class DoublyLinkedList<E> {
 
     // 모든 노드를 삭제
     public void clear() {
-        while(!isEmpty()) {
+        while (!isEmpty()) {
             removeFirst();
+        }
+    }
+
+    class Node<E> {
+        private E data;
+        private Node<E> prev;
+        private Node<E> next;
+
+        public Node() {
+            data = null;
+            prev = next = this;
+        }
+
+        public Node(E data, Node<E> prev, Node<E> next) {
+            this.data = data;
+            this.prev = prev;
+            this.next = next;
         }
     }
 }
