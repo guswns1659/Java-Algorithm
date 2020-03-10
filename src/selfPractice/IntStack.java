@@ -1,4 +1,4 @@
-package memory;
+package selfPractice;
 
 public class IntStack {
     private int max;
@@ -7,30 +7,32 @@ public class IntStack {
 
     public static class EmptyIntStackException extends RuntimeException {
         public EmptyIntStackException() {
+
         }
     }
 
     public static class OverflowIntStackException extends RuntimeException {
         public OverflowIntStackException() {
+
         }
     }
 
-    public IntStack(int capacity) {
+    public IntStack (int capacity) {
         pointer = 0;
         max = capacity;
         try {
-            stack = new int[max];
-        } catch (OutOfMemoryError e) {
+           stack = new int[max];
+        } catch(OutOfMemoryError e) {
             max = 0;
         }
     }
 
-    public int push(int value) {
+    public int push (int value) {
         if (pointer >= max) throw new OverflowIntStackException();
         return stack[pointer++] = value;
     }
 
-    public int pop() {
+    public int pop () {
         if (pointer < 1) throw new EmptyIntStackException();
         return stack[--pointer];
     }
@@ -48,33 +50,30 @@ public class IntStack {
         return -1;
     }
 
-    public void clear() {
-        pointer = 0;
-    }
-
     public int size() {
         return pointer;
     }
 
-    public int capacity() {
-        return max;
-    }
-
     public boolean isEmpty() {
-        return pointer <= 0;
+        return pointer <=0;
     }
 
     public boolean isFull() {
         return pointer >= max;
     }
 
+    public void clear() {
+        pointer = 0;
+    }
+
     public void dump() {
         if (pointer < 1) System.out.println("스택이 비었습니다.");
         else {
             for (int index = 0; index < pointer; index++) {
-                System.out.print(stack[index]+" ");
+                System.out.println("stack["+index+"] " + stack[index]);
             }
             System.out.println();
         }
     }
 }
+
