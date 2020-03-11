@@ -1,4 +1,4 @@
-package doit.chap5.chap6.Practice9;
+package memory;
 
 import java.util.Arrays;
 
