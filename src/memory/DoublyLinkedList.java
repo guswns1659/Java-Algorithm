@@ -3,7 +3,6 @@ package memory;
 import java.util.Comparator;
 
 public class DoublyLinkedList<E> {
-
     private Node<E> head;
     private Node<E> current;
 
