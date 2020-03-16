@@ -23,5 +23,9 @@
     - 배열 크기의 절반보다 빈도수가 많은 원소 구하기 
     - HashMap의 원소 값 추가하며 구현 : hashMap.merge(key, 1, Integer::sum);
     - more than의 의미는 초과!
-    
+5. [Count Primes](https://leetcode.com/problems/count-primes)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/blob/master/src/leetcodeEasy/CountPrimes.java)
+    - 양의 정수 n이하 소수의 개수를 구하기
+    - Arrays.asList()로 초기화하면 add, remove() 연산 시 unSupportedOperation 예외 발생 
+    - Prime인지 계산할 때 <= 주의!! (어딘지 알지?)
 ## [leetCode Medium](https://leetcode.com/)
