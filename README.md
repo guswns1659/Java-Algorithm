@@ -28,4 +28,10 @@
     - 양의 정수 n이하 소수의 개수를 구하기
     - Arrays.asList()로 초기화하면 add, remove() 연산 시 unSupportedOperation 예외 발생 
     - Prime인지 계산할 때 <= 주의!! (어딘지 알지?)
+6. [Vaild Anagram](https://leetcode.com/problems/valid-anagram)
+    - [풀이]()
+    - 두 개의 문자열이 anagram인지 판별하는 문제 
+    - char[]는 stream으로 사용하려면 복잡하다. 그냥 for문 쓰기.	
+	- replaceFirst()와 replace의 차이는 여러개를 바꾸냐 마느냐의 차이다. 
+    - 반복문으로 해결되는 데 굳이 스택을 사용.. 
 ## [leetCode Medium](https://leetcode.com/)
