@@ -1,14 +1,14 @@
 package leetcodeEasy;
 
+import java.util.Arrays;
+import java.util.Stack;
+import java.util.stream.Stream;
+
 public class Main {
     public static void main(String[] args) {
-        MinStack minStack = new MinStack();
-        minStack.push(-2);
-        minStack.push(0);
-        minStack.push(-3);
-        System.out.println(minStack.getMin());
-        minStack.pop();
-        System.out.println(minStack.top());
-        System.out.println(minStack.getMin());
+        Stack<Character> stack = new Stack<>();
+        char[] chars = {'a', 'b', 'c'};
+        String string = "abc";
+        string.replaceFirst(String.valueOf(string.charAt(2)), "");
     }
 }
