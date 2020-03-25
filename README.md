@@ -4,7 +4,11 @@
 ## 생성 이유 
 [Do it 자료구조와 함께 배우는 알고리즘 자바편](http://m.yes24.com/goods/detail/60547893)을 읽으며 자료구조의 개념을 세웠다. 이젠 문제 풀이 시작!! 
 
-## [leetCode Easy](https://leetcode.com/)
+## 커밋 컨벤션
+- [DOCUMENTATION] : README 문서에 풀이 정리할 때
+- [ALGORITHM] : 문제 풀이한 코드 커밋할 
+
+## [leetCode Easy](https://leetcode.com/) / Total : 6문제
 1. [Roman to Integer](https://leetcode.com/problems/roman-to-integer/)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/blob/master/src/leetcodeEasy/RomanToInt.java)
     - HashMap, stack 이용해 문제 풀이
@@ -33,5 +37,13 @@
     - 두 개의 문자열이 anagram인지 판별하는 문제 
     - char[]는 stream으로 사용하려면 복잡하다. 그냥 for문 쓰기.	
 	- replaceFirst()와 replace의 차이는 여러개를 바꾸냐 마느냐의 차이다. 
-    - 반복문으로 해결되는 데 굳이 스택을 사용.. 
+    - 반복문으로 해결되는 데 굳이 스택을 사용..
+
+## 백준 - 그리디 알고리즘 / Total : 1문제
+1. [ATM](https://www.acmicpc.net/problem/11399)
+ 	- [풀이](https://github.com/guswns1659/Java-Algorithm/commit/b0a3fcff14f2c1e4151401a13bffa8746412a3ba)
+	- [동빈나의 알고리즘 풀이전략]() 영상 본 뒤 그리디 알고리즘 문제 풀이 시작 
+	- 일주일만에 다시 알고리즘 공부 시작..! 하루에 한문제는 도전하기!
+	- List sort는 Collection.sort() 이용.
+    
 ## [leetCode Medium](https://leetcode.com/)
