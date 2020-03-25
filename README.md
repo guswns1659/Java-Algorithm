@@ -42,7 +42,7 @@
 ## 백준 - 그리디 알고리즘 / Total : 1문제
 1. [ATM](https://www.acmicpc.net/problem/11399)
  	- [풀이](https://github.com/guswns1659/Java-Algorithm/commit/b0a3fcff14f2c1e4151401a13bffa8746412a3ba)
-	- [동빈나의 알고리즘 풀이전략]() 영상 본 뒤 그리디 알고리즘 문제 풀이 시작 
+	- [동빈나의 알고리즘 풀이전략](https://www.youtube.com/watch?v=ukkLCl9yBvE&t=806s) 영상 본 뒤 그리디 알고리즘 문제 풀이 시작 
 	- 일주일만에 다시 알고리즘 공부 시작..! 하루에 한문제는 도전하기!
 	- List sort는 Collection.sort() 이용.
     
