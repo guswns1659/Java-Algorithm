@@ -5,8 +5,8 @@
 [Do it 자료구조와 함께 배우는 알고리즘 자바편](http://m.yes24.com/goods/detail/60547893)을 읽으며 자료구조의 개념을 세웠다. 이젠 문제 풀이 시작!! 
 
 ## 커밋 컨벤션
-- [DOCUMENTATION] : README 문서에 풀이 정리할 때
-- [ALGORITHM] : 문제 풀이한 코드 커밋할 
+- [Docs] : README 문서에 풀이 정리
+- [Algorithm] : 문제 풀이한 코드 커밋
 
 ## [leetCode Easy](https://leetcode.com/) / Total : 6문제
 1. [Roman to Integer](https://leetcode.com/problems/roman-to-integer/)
@@ -45,5 +45,11 @@
 	- [동빈나의 알고리즘 풀이전략](https://www.youtube.com/watch?v=ukkLCl9yBvE&t=806s) 영상 본 뒤 그리디 알고리즘 문제 풀이 시작 
 	- 일주일만에 다시 알고리즘 공부 시작..! 하루에 한문제는 도전하기!
 	- List sort는 Collection.sort() 이용.
+2. [동전](https://www.acmicpc.net/problem/11047)
+	- [풀이](https://github.com/guswns1659/Java-Algorithm/commit/2e99259e63993451c3fd033342851c6942071085)
+	- 금액을 주어진 동전들의 내림차순으로 나눈다. 나눈 몫이 0이 아닐 때 answer추가하고, 0이라면 다른 동전으로 나눈다. 
+	- 나머지를 금액으로 초기화하고 반복한다. 
+	- Intellij의 모든 code Completion을 끔.
+	- 테스트 코드를 작성하지 못해 아쉽다. 
     
 ## [leetCode Medium](https://leetcode.com/)
