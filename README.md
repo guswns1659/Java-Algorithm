@@ -39,7 +39,7 @@
 	- replaceFirst()와 replace의 차이는 여러개를 바꾸냐 마느냐의 차이다. 
     - 반복문으로 해결되는 데 굳이 스택을 사용..
 
-## 백준 - 그리디 알고리즘 / Total : 3문제
+## 백준 - 그리디 알고리즘 / Total : 4문제
 1. [ATM](https://www.acmicpc.net/problem/11399)
  	- [풀이](https://github.com/guswns1659/Java-Algorithm/commit/b0a3fcff14f2c1e4151401a13bffa8746412a3ba)
 	- [동빈나의 알고리즘 풀이전략](https://www.youtube.com/watch?v=ukkLCl9yBvE&t=806s) 영상 본 뒤 그리디 알고리즘 문제 풀이 시작 
@@ -54,4 +54,10 @@
 3. [거스름돈](https://www.acmicpc.net/problem/5585)
 	- [풀이](https://github.com/guswns1659/Java-Algorithm/commit/5ad82c12b845fa7ec2b0a64680b1588af91c6fb9)
 	- 위의 동전문제와 동일 
+4. [로프](https://www.acmicpc.net/problem/2217)
+	- [풀이](https://github.com/guswns1659/Java-Algorithm/commit/5f27ba9184cd9dabdeea455df95eb5cd0dcf7719)
+	- 주어진 여러개의 로프로 들수 있는 최대 중량 구하는 문제 
+	- 로프를 오름차순으로 정리한 뒤 작은 값부터 로프의 개수 -1를 곱한다. 
+	- 곱한 값 중 최대값이 정답
+	- List 오름차순은 Collections.sort(), 내림차순은 Collections.sort(list, Collections.reverseOrder());
 ## [leetCode Medium](https://leetcode.com/)
