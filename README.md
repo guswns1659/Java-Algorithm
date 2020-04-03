@@ -39,7 +39,7 @@
 	- replaceFirst()와 replace의 차이는 여러개를 바꾸냐 마느냐의 차이다. 
     - 반복문으로 해결되는 데 굳이 스택을 사용..
 
-## 백준 - 그리디 알고리즘 / Total : 1문제
+## 백준 - 그리디 알고리즘 / Total : 3문제
 1. [ATM](https://www.acmicpc.net/problem/11399)
  	- [풀이](https://github.com/guswns1659/Java-Algorithm/commit/b0a3fcff14f2c1e4151401a13bffa8746412a3ba)
 	- [동빈나의 알고리즘 풀이전략](https://www.youtube.com/watch?v=ukkLCl9yBvE&t=806s) 영상 본 뒤 그리디 알고리즘 문제 풀이 시작 
@@ -51,5 +51,7 @@
 	- 나머지를 금액으로 초기화하고 반복한다. 
 	- Intellij의 모든 code Completion을 끔.
 	- 테스트 코드를 작성하지 못해 아쉽다. 
-    
+3. [거스름돈](https://www.acmicpc.net/problem/5585)
+	- [풀이](https://github.com/guswns1659/Java-Algorithm/commit/5ad82c12b845fa7ec2b0a64680b1588af91c6fb9)
+	- 위의 동전문제와 동일 
 ## [leetCode Medium](https://leetcode.com/)
