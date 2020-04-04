@@ -39,7 +39,7 @@
 	- replaceFirst()와 replace의 차이는 여러개를 바꾸냐 마느냐의 차이다. 
     - 반복문으로 해결되는 데 굳이 스택을 사용..
 
-## 백준 - 그리디 알고리즘 / Total : 4문제
+## 백준 - 그리디 알고리즘 / Total : 5문제
 1. [ATM](https://www.acmicpc.net/problem/11399)
  	- [풀이](https://github.com/guswns1659/Java-Algorithm/commit/b0a3fcff14f2c1e4151401a13bffa8746412a3ba)
 	- [동빈나의 알고리즘 풀이전략](https://www.youtube.com/watch?v=ukkLCl9yBvE&t=806s) 영상 본 뒤 그리디 알고리즘 문제 풀이 시작 
@@ -60,4 +60,11 @@
 	- 로프를 오름차순으로 정리한 뒤 작은 값부터 로프의 개수 -1를 곱한다. 
 	- 곱한 값 중 최대값이 정답
 	- List 오름차순은 Collections.sort(), 내림차순은 Collections.sort(list, Collections.reverseOrder());
+5. [30](https://www.acmicpc.net/problem/10610) 
+	- [풀이](https://github.com/guswns1659/Java-Algorithm/commit/51a78650334be10040298392c463b7cd870d46b8)
+	- 주어진 숫자의 자리수로 가장 큰 30의 배수를 출력, 만들 수 없다면 -1 출력 문제.
+	- 자리수에 0이 없는지, 더한 자리수가 3의 배수인지로 확인 가능.
+	- 풀이보다 자바 문법익히는 데 시간이 더 걸림. 꾸준히해야 몸에 익을 거 같다.
+	- split("") 하면 한 단어씩 끊어진다.
+	- 기본형 배열 sort : Arrays.sort(), 역순 : Arrays.sort(list, Collections.reverseOrder()); 다만, 역순은 기본형 배열은 안된다.
 ## [leetCode Medium](https://leetcode.com/)
