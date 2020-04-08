@@ -42,12 +42,12 @@ public class Bintree<K, V> {
     }
 
     public int compare(K key1, K key2) {
-        return (comparator == null) ? ((Comparable<K>)key1).compareTo(key2) : (comparator.compare(key1, key2));
+        return (comparator == null) ? ((Comparable<K>) key1).compareTo(key2) : (comparator.compare(key1, key2));
     }
 
     public V search(K key) {
         Node<K, V> pointer = root;
-        while(true) {
+        while (true) {
             int condition = compare(key, pointer.getKey());
             if (condition == 0) return pointer.getValue();
             else if (condition < 0) pointer = pointer.left;
@@ -72,8 +72,7 @@ public class Bintree<K, V> {
                 return true;
             }
             return addNode(node.left, key, value);
-        }
-        else {
+        } else {
             if (node.right == null) {
                 node.right = new Node<>(key, value, null, null);
                 return true;

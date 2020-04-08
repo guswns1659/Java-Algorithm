@@ -22,11 +22,11 @@ public class ringBuffer {
 
             System.out.print("계속 할까요? (예.1/ 아니오.0) : ");
             retry = scanner.nextInt();
-        } while(retry == 1);
+        } while (retry == 1);
 
         int i = count - N;
         if (i < 0) i = 0;
-        for (; i< count; i++)
+        for (; i < count; i++)
             System.out.printf("%2d번째의 정수 = %d\n", i + 1, ints[i % N]);
     }
 }

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class EuclidGCD {
     static int gcd(int x, int y) {
         if (y == 0) return x;
-        return gcd(y, x%y);
+        return gcd(y, x % y);
     }
 
     public static void main(String[] args) {
@@ -17,7 +17,7 @@ public class EuclidGCD {
         System.out.print("정수를 입력하세요.");
         int y = scanner.nextInt();
 
-        System.out.printf("%d와 %d의 최대공약수 : %d", x, y, gcd(x,y));
+        System.out.printf("%d와 %d의 최대공약수 : %d", x, y, gcd(x, y));
         System.out.println();
     }
 }

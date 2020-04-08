@@ -18,11 +18,11 @@ public class BinarySerach {
         System.out.print("x[0] : ");
         ints[0] = scanner.nextInt();
 
-        for (int index = 1; index < length; index++){
+        for (int index = 1; index < length; index++) {
             do {
-                System.out.println("ints["+index+"] : " );
+                System.out.println("ints[" + index + "] : ");
                 ints[index] = scanner.nextInt();
-            } while (ints[index] < ints[index-1]);
+            } while (ints[index] < ints[index - 1]);
         }
 
         System.out.print("검색할 값 : ");
@@ -40,9 +40,8 @@ public class BinarySerach {
             int middle = (left + right) / 2;
             if (ints[middle] == key) return middle;
             else if (ints[middle] > key) {
-                right = middle-1;
-            }
-            else {
+                right = middle - 1;
+            } else {
                 left = middle + 1;
             }
         } while (left <= right);

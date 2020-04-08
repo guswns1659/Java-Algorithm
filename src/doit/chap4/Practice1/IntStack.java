@@ -72,7 +72,7 @@ public class IntStack {
         if (pointer < 1) System.out.println("스택이 비었습니다.");
         else {
             for (int index = 0; index < pointer; index++) {
-                System.out.print(stack[index]+" ");
+                System.out.print(stack[index] + " ");
             }
             System.out.println();
         }

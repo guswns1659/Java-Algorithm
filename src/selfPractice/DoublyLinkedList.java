@@ -34,11 +34,11 @@ public class DoublyLinkedList<E> {
     public E search(E data, Comparator<? super E> c) {
         Node<E> ptr = head.next;
         while (ptr != head) {
-           if (c.compare(data, ptr.data) == 0) {
-               current = ptr;
-               return ptr.data;
-           }
-           ptr = ptr.next;
+            if (c.compare(data, ptr.data) == 0) {
+                current = ptr;
+                return ptr.data;
+            }
+            ptr = ptr.next;
         }
         return null;
     }

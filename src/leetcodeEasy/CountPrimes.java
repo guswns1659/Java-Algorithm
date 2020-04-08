@@ -1,6 +1,7 @@
 package leetcodeEasy;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CountPrimes {
     private List<Integer> primes = new ArrayList<>();
@@ -9,7 +10,7 @@ public class CountPrimes {
         primes.clear();
         primes.add(2);
         primes.add(3);
-        for (int each = 5; each < n; each+=2) {
+        for (int each = 5; each < n; each += 2) {
             boolean flag = true;
             int i;
             for (i = 0; primes.get(i) * primes.get(i) <= each; i++) {

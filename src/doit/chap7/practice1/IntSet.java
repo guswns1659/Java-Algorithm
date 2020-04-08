@@ -11,7 +11,7 @@ public class IntSet {
         size = 0;
         try {
             set = new int[max];
-        } catch(OutOfMemoryError e) {
+        } catch (OutOfMemoryError e) {
             max = 0;
         }
     }
@@ -59,9 +59,9 @@ public class IntSet {
 
     public boolean equalTo(IntSet another) {
         if (another.size != size) return false;
-        for(int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             int j = 0;
-            for(; j < another.size; j++) {
+            for (; j < another.size; j++) {
                 if (set[i] == another.set[j]) break;
             }
             if (j == another.size) return false;

@@ -14,7 +14,7 @@ public class Practice9 {
 
         prime[numberOfPrime++] = 2;
 
-        for (int number = 3; number < 1001; number+=2) {
+        for (int number = 3; number < 1001; number += 2) {
             int i;
             for (i = 1; i < numberOfPrime; i++) {
                 counter++;

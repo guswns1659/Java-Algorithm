@@ -7,12 +7,15 @@ public class Gstack<E> {
     private int pointer;
     private ArrayList<E> stack;
 
-    public static class EmptyGStackException extends RuntimeException {
-        public EmptyGStackException() {}
+    public E push(E value) {
+        if (pointer >= max) throw new OverflowGStackException();
+        stack.add(value);
+        return value;
     }
 
-    public static class OverflowGStackException extends RuntimeException{
-        public OverflowGStackException() {}
+    public E pop() {
+        if (pointer < 1) throw new EmptyGStackException();
+        return stack.get(pointer - 1);
     }
 
     public Gstack(int capacity) {
@@ -25,15 +28,14 @@ public class Gstack<E> {
         }
     }
 
-    public E push (E value) {
-        if (pointer >= max) throw new OverflowGStackException();
-        stack.add(value);
-        return value;
+    public static class EmptyGStackException extends RuntimeException {
+        public EmptyGStackException() {
+        }
     }
 
-    public E pop () {
-        if (pointer < 1) throw new EmptyGStackException();
-        return stack.get(pointer-1);
+    public static class OverflowGStackException extends RuntimeException {
+        public OverflowGStackException() {
+        }
     }
 
 }

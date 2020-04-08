@@ -2,7 +2,7 @@ package doit.chap3;
 
 public class Practice1 {
     public static void main(String[] args) {
-        int[] ints = {22,8,55,32,120,55,70};
+        int[] ints = {22, 8, 55, 32, 120, 55, 70};
         int index = sequentialSearch(ints, ints.length, 100);
         System.out.println(index);
     }

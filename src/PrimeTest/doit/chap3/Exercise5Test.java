@@ -3,7 +3,7 @@ package doit.chap3;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class Exercise5Test {
 
@@ -13,7 +13,7 @@ class Exercise5Test {
     @BeforeEach
     void setUp() {
         exercise5 = new Exercise5();
-        ints = new int[] {1,3,5,7,7,7,7,8,8,9,9};
+        ints = new int[]{1, 3, 5, 7, 7, 7, 7, 8, 8, 9, 9};
     }
 
     @Test
