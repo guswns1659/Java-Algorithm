@@ -66,5 +66,10 @@
 	- 자리수에 0이 없는지, 더한 자리수가 3의 배수인지로 확인 가능.
 	- 풀이보다 자바 문법익히는 데 시간이 더 걸림. 꾸준히해야 몸에 익을 거 같다.
 	- split("") 하면 한 단어씩 끊어진다.
-	- 기본형 배열 sort : Arrays.sort(), 역순 : Arrays.sort(list, Collections.reverseOrder()); 다만, 역순은 기본형 배열은 안된다.
+	- 기본형 배열 sort : Arrays.sort() / 역순 : Arrays.sort(list, Collections.reverseOrder()); 다만, 기본자료형 배열은 역순이 안된다.
+6. [인턴](https://www.acmicpc.net/problem/2875)
+	- [풀이실패](https://github.com/guswns1659/Java-Algorithm/blob/5797e2a98810cffbdcb833136f3f5d2fcd47e7ee/src/backjun/Intern.java)
+	- 주어진 남,녀,인턴 참가자로 만들 수 있는 최대 팀 수 구하는 문제 
+	- 남 1, 여 2으로 2인 1조. 인턴 참가자는 제외하고 계산해야함.
+	- 설계를 잘 못 했는지 반례가 계속 나온다. 추후 도전 
 ## [leetCode Medium](https://leetcode.com/)
