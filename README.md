@@ -71,5 +71,10 @@
 	- [풀이실패](https://github.com/guswns1659/Java-Algorithm/blob/5797e2a98810cffbdcb833136f3f5d2fcd47e7ee/src/backjun/Intern.java)
 	- 주어진 남,녀,인턴 참가자로 만들 수 있는 최대 팀 수 구하는 문제 
 	- 남 1, 여 2으로 2인 1조. 인턴 참가자는 제외하고 계산해야함.
-	- 설계를 잘 못 했는지 반례가 계속 나온다. 추후 도전 
+	- 설계를 잘 못 했는지 반례가 계속 나온다. 추후 도전
+
+7. [잃어버린 괄호](https://www.acmicpc.net/problem/1541)
+	- [풀이실패](https://github.com/guswns1659/Java-Algorithm/commit/e521b338309ac214ceb41fd774fed8a82d695deb)
+	- 주어진 수식의 괄호를 사용해서 최소값을 만드는 문제 
+	- 주어진 수식을 파싱하는 코드만 추가 
 ## [leetCode Medium](https://leetcode.com/)
