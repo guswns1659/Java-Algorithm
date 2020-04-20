@@ -77,4 +77,11 @@
 	- 괄호가 없는 수식에서 괄호를 사용해서 최소값을 만드는 문제 
 	- "+"를 split하려면 split("\\+")라고 적어야함. 예약된 문자라 그렇다고 함. 
 	- "-"를 기준으로 괄호를 만들면 된다. 
+8. [기타줄](https://www.acmicpc.net/problem/1049)
+	- [풀이 중](https://github.com/guswns1659/Java-Algorithm/commit/f2d18f3e0bae45169b6ba48eeceba3a214d9f051)
+	- 패키지 별로 모으고 낱개 가격 별로 모아놓은 상태 
+	- 3가지 경우
+		- 패키지 최소값으로만 구하기 
+		- 낱개로만 구하기
+		- 두 개를 섞어서 구하기 
 ## [leetCode Medium](https://leetcode.com/)
