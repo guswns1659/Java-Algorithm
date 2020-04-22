@@ -78,10 +78,13 @@
 	- "+"를 split하려면 split("\\+")라고 적어야함. 예약된 문자라 그렇다고 함. 
 	- "-"를 기준으로 괄호를 만들면 된다. 
 8. [기타줄](https://www.acmicpc.net/problem/1049)
-	- [풀이 중](https://github.com/guswns1659/Java-Algorithm/commit/f2d18f3e0bae45169b6ba48eeceba3a214d9f051)
-	- 패키지 별로 모으고 낱개 가격 별로 모아놓은 상태 
+	- [풀이](https://github.com/guswns1659/Java-Algorithm/blob/master/src/backjun/GuitarString.java)
+	- 구매할 기타줄을 패키지와 낱개 가격을 이용해서 최솟값으로 구매하는 문제 
+	- 패키지와 낱개의 최솟값을 모은 뒤 아래 경우의 수로 계산해서 그 중 최솟값을 출력하기.
 	- 3가지 경우
 		- 패키지 최소값으로만 구하기 
 		- 낱개로만 구하기
 		- 두 개를 섞어서 구하기 
+	- 스트림으로 최솟값을 구할 때 : candidate.stream().mapToInt(s -> s).min().getAsInt();
+	- getAsInt()가 경고가 뜨는데 어떻게 처리할 지는 고민해보기. 
 ## [leetCode Medium](https://leetcode.com/)
