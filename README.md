@@ -88,7 +88,8 @@
 	- 스트림으로 최솟값을 구할 때 : candidate.stream().mapToInt(s -> s).min().getAsInt();
 	- getAsInt()가 경고가 뜨는데 어떻게 처리할 지는 고민해보기. 
 9. [부등호](https://www.acmicpc.net/problem/2529)
-	- [풀이]()
+	- [풀이](https://github.com/guswns1659/Java-Algorithm/blob/master/src/backjun/Sign.java)
 	- 입력된 값을 파싱하는 코드만 추가
 	- 백트래킹, DFS, BFS와 관련된 문제라 개념 공부
+	- 인터넷 답안보고 해결
 ## [leetCode Medium](https://leetcode.com/)
