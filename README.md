@@ -92,4 +92,8 @@
 	- 입력된 값을 파싱하는 코드만 추가
 	- 백트래킹, DFS, BFS와 관련된 문제라 개념 공부
 	- 인터넷 답안보고 해결
+10. [반도체 설계](https://www.acmicpc.net/problem/2352)
+	- [풀이](https://github.com/guswns1659/Java-Algorithm/blob/bc781c8eaa7661d095205e5768bb10343646d03d/src/backjun/N2352.java)
+	- LIS(Longest Increasing Subsequence) 문제 
+	- 시간초과.. 
 ## [leetCode Medium](https://leetcode.com/)
