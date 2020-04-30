@@ -13,31 +13,37 @@ public class N2352 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int numberOfPorts = Integer.parseInt(br.readLine());
-        List<Integer> portsList = Arrays.stream(br.readLine().split(" "))
+        List<Integer> inputToList = Arrays.stream(br.readLine().split(" "))
                 .map(Integer::parseInt)
                 .collect(Collectors.toList());
 
         Map<Integer, Integer> ports = new LinkedHashMap<>();
-        portsList.forEach(port -> ports.put(port, 0));
+        inputToList.forEach(port -> ports.put(port, 0));
 
-        System.out.println("linkedHashMap" + ports);
+        System.out.println("linkedHashMap : " + ports);
 
         Map<Integer, Integer> beforePorts = new LinkedHashMap<>();
 
-//        List<Integer> decreasingPorts = new ArrayList<>(ports);
+        int firstKey = inputToList.get(0);
+        int firstValue = ports.get(firstKey);
+        beforePorts.put(firstKey, ++firstValue);
 
+        System.out.println("beforePorts : " + beforePorts);
 
-//        List<Long> possibles = new ArrayList<>();
-//
-//        for (Integer port : ports) {
-//            long countOfBigger = decreasingPorts.stream()
-//                    .filter(each -> each > port).mapToInt(e -> e).count();
-//            decreasingPorts.remove(port);
-//            System.out.println("decreasingPorts : " + decreasingPorts);
-//            possibles.add(countOfBigger);
-//        }
-//
-//        long answer = possibles.stream().mapToLong(e -> e).max().getAsLong();
-//        System.out.println("answer : " + answer);
+        // 2번째 수부터
+        for (int index = 1; index < numberOfPorts; index++) {
+            int current = inputToList.get(index);
+            long countOfLowerThanCurrent = beforePorts.keySet().stream().filter(each -> each < current).count();
+            if (countOfLowerThanCurrent == 0) {
+                int currentValue = ports.get(current);
+                beforePorts.put(current, ++currentValue);
+            } else {
+                int maxBetweenLowers = beforePorts.keySet().stream().filter(each -> each < current).mapToInt(beforePorts::get).max().orElse(0);
+//                int currentValue = ports.get(current);
+                beforePorts.put(current, ++maxBetweenLowers);
+            }
+        }
+        int answer = beforePorts.values().stream().mapToInt(each -> each).max().getAsInt();
+        System.out.println("answer : " + answer);
     }
 }
