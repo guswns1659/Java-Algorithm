@@ -8,6 +8,9 @@
 - [Docs] : README 문서에 풀이 정리
 - [Algorithm] : 문제 풀이한 코드 커밋
 
+<details markdown="1">
+<summary> leetCode Easy </summary>
+
 ## [leetCode Easy](https://leetcode.com/) / Total : 6문제
 1. [Roman to Integer](https://leetcode.com/problems/roman-to-integer/)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/blob/master/src/leetcodeEasy/RomanToInt.java)
@@ -38,6 +41,11 @@
     - char[]는 stream으로 사용하려면 복잡하다. 그냥 for문 쓰기.	
 	- replaceFirst()와 replace의 차이는 여러개를 바꾸냐 마느냐의 차이다. 
     - 반복문으로 해결되는 데 굳이 스택을 사용..
+
+</details>
+
+<details markdown="1">
+<summary> 백준 - 그리디 알고리즘 </summary>
 
 ## 백준 - 그리디 알고리즘 / Total : 5문제
 1. [ATM](https://www.acmicpc.net/problem/11399)
@@ -93,7 +101,10 @@
 	- 백트래킹, DFS, BFS와 관련된 문제라 개념 공부
 	- 인터넷 답안보고 해결
 10. [반도체 설계](https://www.acmicpc.net/problem/2352)
-	- [풀이](https://github.com/guswns1659/Java-Algorithm/blob/bc781c8eaa7661d095205e5768bb10343646d03d/src/backjun/N2352.java)
-	- LIS(Longest Increasing Subsequence) 문제 
-	- 시간초과.. 
+	- [풀이](https://github.com/guswns1659/Java-Algorithm/blob/60bf1f774bd9d05ea99e8bf34df1cf64c3fa10b2/src/backjun/N2352.java)
+	- LIS(Longest Increasing Subsequence) 문제지만 길이만 같고 배열의 원소는 다름.
+	- Arrays.binarySearch() 사용 시 원소가 없으면 들어갈 자리가 음수로 나온다. 대신 들어갈 자리 시작은 1부터 시작.
+
+</details>
+	
 ## [leetCode Medium](https://leetcode.com/)
