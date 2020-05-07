@@ -104,6 +104,10 @@
 	- [풀이](https://github.com/guswns1659/Java-Algorithm/blob/60bf1f774bd9d05ea99e8bf34df1cf64c3fa10b2/src/backjun/N2352.java)
 	- LIS(Longest Increasing Subsequence) 문제지만 길이만 같고 배열의 원소는 다름.
 	- Arrays.binarySearch() 사용 시 원소가 없으면 들어갈 자리가 음수로 나온다. 대신 들어갈 자리 시작은 1부터 시작.
+11. [줄세우기](https://www.acmicpc.net/problem/2631)
+	- [풀이](https://github.com/guswns1659/Java-Algorithm/blob/ec8d86011b9983089486ce24ee251852dab19fc0/src/backjun/N2631.java)
+	- LIS 변형 문제.
+	- 아이들수 - (최장 증가 부분수열의 길이)
 
 </details>
 	
