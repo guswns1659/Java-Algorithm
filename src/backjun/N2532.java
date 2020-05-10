@@ -3,51 +3,110 @@ package backjun;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.Comparator;
+import java.util.StringTokenizer;
 
 public class N2532 {
     public static void main(String[] args) throws IOException {
+        int N;
+        Animal[] list;
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int numberOfAnimals = Integer.parseInt(br.readLine());
-        List<Integer> distances = new ArrayList<>();
 
-        for (int count = 0; count < numberOfAnimals; count++) {
-            List<Integer> eachCondition = Stream.of(br.readLine().split(" "))
-                    .map(Integer::parseInt)
-                    .collect(Collectors.toList());
-            int distance = eachCondition.get(2) - eachCondition.get(1);
-            distances.add(distance);
+        N = Integer.parseInt(br.readLine());
+        list = new Animal[N];
+
+        for (int i = 0; i < N; i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            Integer.parseInt(st.nextToken());
+            list[i] = new Animal(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
         }
-        Collections.sort(distances);
-//        System.out.println(distances);
 
-        System.out.println(lis(distances));
+        Arrays.sort(list);
+
+        System.out.println(solve(list, N));
     }
 
-    public static int lis(List<Integer> distances) {
-        int[] sequences = new int[distances.size()];
-        sequences[0] = distances.get(0);
-        int length = 1;
+    private static int solve(Animal[] list, int N) {
+        Integer[] tailTable = new Integer[N];
+        int lengthOfLIS;
 
-        for (int index = 1; index < distances.size(); index++) {
-            int current = distances.get(index);
+        // 초기값
+        tailTable[0] = list[0].end;
+        lengthOfLIS = 1;
 
-            if (current < sequences[0]) {
-                sequences[0] = current;
-            } else if (current > sequences[length - 1]) {
-                sequences[length] = current;
-                length++;
-            } else {
-                int location = Arrays.binarySearch(sequences, 0, length, current);
-                location = location < 0 ? -location - 1 : location;
-                sequences[location] = current;
+        // solve
+        for (int i = 1; i < N; i++) {
+
+            if (list[i].isEqual(list[i - 1])) {
+
+                continue;
+            }
+
+            // 후보값이 LDS 처음 값보다 큰 경우
+            if (list[i].end >= tailTable[0]) {
+
+                tailTable[0] = list[i].end;
+            }
+
+            // 후보값이 LDS 마지막 값보다 작은 경우
+            else if (list[i].end <= tailTable[lengthOfLIS - 1]) {
+
+                tailTable[lengthOfLIS++] = list[i].end;
+            }
+
+            // 후보값이 LDS 처음 값보다 작고, LDS 마지막 값보다 큰 경우
+            else {
+
+                // 1. 찾는 값이 없는 경우 -> 넣어야 할 자리를 return
+                // 예) [9 8 8 8 6 4 2] 에서 7을 찾으면 4가 return 된다
+                int idx = Arrays.binarySearch(tailTable, 0, lengthOfLIS, list[i].end, Comparator.reverseOrder());
+
+                idx = idx < 0 ? -idx - 1 : idx;
+
+                // 2. 찾는 값이 있는 경우 + 여러 개 있는 경우
+                // 예) [9 8 8 8 8 ....8 7] 에서 8을 binarySearh로 찾으면 어떤 idx가 나올지 모른다.
+                while (tailTable[idx] == list[i].end) {
+
+                    idx++;
+                }
+
+                tailTable[idx] = list[i].end;
             }
         }
-        return length;
+
+        return lengthOfLIS;
     }
+
+    static class Animal implements Comparable {
+
+        int start;
+        int end;
+
+        Animal(int start, int end) {
+            this.start = start;
+            this.end = end;
+        }
+
+        @Override
+        public int compareTo(Object o) {
+            // start 기준으로 오름차순, start가 같으면 end 기준으로 내림차순
+            return this.start < ((Animal) o).start ? -1 : this.start > ((Animal) o).start ? 1 : this.end > ((Animal) o).end ? -1 : 1;
+        }
+
+        @Override
+        public String toString() {
+            return "Animal{" +
+                    "start=" + start +
+                    ", end=" + end +
+                    '}';
+        }
+
+        boolean isEqual(Animal animal) {
+            return this.start == animal.start && this.end == animal.end;
+        }
+    }
+
+
 }
