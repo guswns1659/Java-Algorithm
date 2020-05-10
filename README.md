@@ -108,7 +108,11 @@
 	- [풀이](https://github.com/guswns1659/Java-Algorithm/blob/ec8d86011b9983089486ce24ee251852dab19fc0/src/backjun/N2631.java)
 	- LIS 변형 문제.
 	- 아이들수 - (최장 증가 부분수열의 길이)
-
+12. [먹이사슬](https://www.acmicpc.net/problem/2532)
+	- [풀이]()
+	- LIS 변형 문제.
+	- Input값 처리.
+	- 동물의 길이를 오름차순한 뒤 LIS를 구하는 방식으로 구현했지만 실패.
 </details>
 	
 ## [leetCode Medium](https://leetcode.com/)
