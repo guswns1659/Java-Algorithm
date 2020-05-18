@@ -6,7 +6,9 @@
 
 ## 커밋 컨벤션
 - [Docs] : README 문서에 풀이 정리
+	- ex) [Docs] 백준 2532번 '먹이사슬' 문제 READMD에 정리
 - [Algorithm] : 문제 풀이한 코드 커밋
+	- ex) [Algorithm] 백준 - 2532번 문제 '먹이사슬' 풀이 코드
 
 <details markdown="1">
 <summary> leetCode Easy </summary>
