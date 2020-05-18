@@ -6,9 +6,7 @@
 
 ## 커밋 컨벤션
 - [Docs] : README 문서에 풀이 정리
-	- ex) [Docs] 백준 2532번 '먹이사슬' 문제 READMD에 정리
 - [Algorithm] : 문제 풀이한 코드 커밋
-	- ex) [Algorithm] 백준 - 2532번 문제 '먹이사슬' 풀이 코드
 
 <details markdown="1">
 <summary> leetCode Easy </summary>
@@ -117,6 +115,9 @@
 	- 답을 봤지만 이해가 더 필요.
 	- Comparable 구현할 때 오름차순일 경우, 값을 비교한 뒤 작으면 -1, 크면 +1. 
 	- 내림차순일 경우 값을 비교한 뒤 작으면 +1, 크면 -1.
+13. [한 줄로 서기](https://www.acmicpc.net/problem/1138)
+	- [풀이]()
+	- 모든 경우의 수를 계산해야 하는 문제 
 </details>
 	
 ## [leetCode Medium](https://leetcode.com/)
