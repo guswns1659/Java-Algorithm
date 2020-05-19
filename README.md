@@ -109,10 +109,15 @@
 	- LIS 변형 문제.
 	- 아이들수 - (최장 증가 부분수열의 길이)
 12. [먹이사슬](https://www.acmicpc.net/problem/2532)
-	- [풀이]()
+	- [풀이](https://github.com/guswns1659/Java-Algorithm/blob/886a30ae86f040845d10bf0aa5a0b39aa0c91ea5/src/backjun/N2532.java)
 	- LIS 변형 문제.
-	- Input값 처리.
-	- 동물의 길이를 오름차순한 뒤 LIS를 구하는 방식으로 구현했지만 실패.
+	- 최장 감소 길이 수열. 
+	- 답을 봤지만 이해가 더 필요.
+	- Comparable 구현할 때 오름차순일 경우, 값을 비교한 뒤 작으면 -1, 크면 +1. 
+	- 내림차순일 경우 값을 비교한 뒤 작으면 +1, 크면 -1.
+13. [한 줄로 서기](https://www.acmicpc.net/problem/1138)
+	- [풀이]()
+	- 모든 경우의 수를 계산해야 하는 문제 
 </details>
 	
 ## [leetCode Medium](https://leetcode.com/)
