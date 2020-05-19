@@ -119,5 +119,14 @@
 	- [풀이]()
 	- 모든 경우의 수를 계산해야 하는 문제 
 </details>
+
+<details markdown="1">
+<summary>Top coder</summary>
+
+1. [KiwiJuiceEasy](https://arena.topcoder.com/#/u/practiceCode/14359/13281/11020/2/305508)
+	- [풀이](https://github.com/guswns1659/Java-Algorithm/blob/8241ac110e51009ddfdea24cb6f7fa9e65636586/src/topcoder/KiwiJuiceEasy.java)
+	- 문제를 차근차근 이해하면서 문제 풀어 보기. 
 	
+</details>
+
 ## [leetCode Medium](https://leetcode.com/)
