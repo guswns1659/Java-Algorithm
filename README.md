@@ -126,6 +126,12 @@
 1. [KiwiJuiceEasy](https://arena.topcoder.com/#/u/practiceCode/14359/13281/11020/2/305508)
 	- [풀이](https://github.com/guswns1659/Java-Algorithm/blob/8241ac110e51009ddfdea24cb6f7fa9e65636586/src/topcoder/KiwiJuiceEasy.java)
 	- 문제를 차근차근 이해하면서 문제 풀어 보기. 
+2. [InterestingParty](https://arena.topcoder.com/#/u/practiceCode/14480/15196/11312/2/307028)
+	- [풀이](https://github.com/guswns1659/Java-Algorithm/blob/8ca42c737d4ccbbf07b7a59cf68e77f54861085a/src/topcoder/InterestingParty.java)
+	- Arrays.asList()로 List 만들면 add, remove 연산을 사용할 수 없다.
+	- 기본 배열 합치려면 Collections으로 만들어야 한다. 
+		- List<String> list = new ArrayList<>(Arrays.asList(first));
+	- 주어진 배열을 합친 뒤 전체 탐색하는 문제. 
 	
 </details>
 
