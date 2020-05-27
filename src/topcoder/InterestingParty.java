@@ -1,8 +1,7 @@
 package topcoder;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class InterestingParty {
     public static void main(String[] args) {
@@ -13,25 +12,23 @@ public class InterestingParty {
     }
 
     public static int bestInvitation(String[] first, String[] second) {
-        List<String> firstToList = new ArrayList(Arrays.asList(first));
-        List<String> secondToList = new ArrayList(Arrays.asList(second));
-        firstToList.addAll(secondToList);
+        Map<String, Integer> hashMap = new HashMap<>();
 
-        int answer = 1;
-        for (int index = 0; index < firstToList.size(); index++) {
-            String value = firstToList.get(index);
-            int expect = 1;
-            for (int index2 = 0; index2 < firstToList.size(); index2++) {
-                if (index == index2) continue;
-                else {
-                    if (value.equals(firstToList.get(index2))) {
-                        expect++;
-                    }
-                }
-            }
-            if (expect > answer) answer = expect;
+        for (int index = 0; index < first.length; index++) {
+            hashMap.put(first[index], 0);
+            hashMap.put(second[index], 0);
         }
-        return answer;
 
+        for (int index = 0; index < first.length; index++) {
+            hashMap.put(first[index], hashMap.get(first[index]) + 1);
+            hashMap.put(second[index], hashMap.get(second[index]) + 1);
+        }
+
+        int answer = 0;
+        for (Integer value : hashMap.values()) {
+            answer = Math.max(answer, value);
+        }
+
+        return answer;
     }
 }
