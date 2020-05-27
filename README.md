@@ -132,6 +132,10 @@
 	- 기본 배열 합치려면 Collections으로 만들어야 한다. 
 		- List<String> list = new ArrayList<>(Arrays.asList(first));
 	- 주어진 배열을 합친 뒤 전체 탐색하는 문제. 
+	- HashMap으로 문제 풀이 가능.
+3. [Cryptography](https://arena.topcoder.com/#/u/practiceCode/14365/11262/10814/2/305685)
+	- [풀이](https://github.com/guswns1659/Java-Algorithm/blob/aee0436dac15f8dfcd64bc6473d80d14bc3ccf46/src/topcoder/Cryptography.java)
+	- 전체 탐색 문제
 	
 </details>
 
