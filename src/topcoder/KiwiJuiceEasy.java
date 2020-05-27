@@ -12,23 +12,11 @@ public class KiwiJuiceEasy {
         System.out.println("result : " + Arrays.toString(result));
 
     }
-
     public static int[] thePouring(int[] capacities, int[] bottles, int[] fromId, int[] toId) {
         for (int index = 0; index < fromId.length; index++) {
-            int fromBottle = bottles[fromId[index]];
-            int fromCapacity = capacities[fromId[index]];
-
-            int toBottle = bottles[toId[index]];
-            int toCapacity = capacities[toId[index]];
-
-            int sum = fromBottle + toBottle;
-            if (sum > toCapacity) {
-                bottles[fromId[index]] = sum - toCapacity;
-                bottles[toId[index]] = toCapacity;
-            } else {
-                bottles[fromId[index]] = 0;
-                bottles[toId[index]] = sum;
-            }
+            int sum = bottles[fromId[index]] + bottles[toId[index]];
+            bottles[toId[index]] = Math.min(sum, capacities[toId[index]]);
+            bottles[fromId[index]] = sum - bottles[toId[index]];
         }
         return bottles;
     }
