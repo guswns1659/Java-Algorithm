@@ -136,6 +136,10 @@
 3. [Cryptography](https://arena.topcoder.com/#/u/practiceCode/14365/11262/10814/2/305685)
 	- [풀이](https://github.com/guswns1659/Java-Algorithm/blob/aee0436dac15f8dfcd64bc6473d80d14bc3ccf46/src/topcoder/Cryptography.java)
 	- 전체 탐색 문제
+4. [ThePalindrome](https://arena.topcoder.com/#/u/practiceCode/13690/9026/10182/2/299600)
+	- [풀이](https://github.com/guswns1659/Java-Algorithm/blob/fdebb0716cf6c5f799c5c644477fc226fb3a96e1/src/topcoder/ThePalindrome.java)
+	- 전체 탐색 문제. 
+	- 테스트 코드와 디버거의 힘을 알 수 있었던 문제.
 	
 </details>
 
