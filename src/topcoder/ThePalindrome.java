@@ -40,5 +40,23 @@ public class ThePalindrome {
         return reversed.equals(s);
     }
 
+    public int find2(String s) {
 
+        for (int lengthOfS = s.length(); ; lengthOfS++) {
+
+            boolean flag = true;
+
+            for (int index = 0; index < s.length(); index++) {
+
+                if ((lengthOfS - index - 1) < s.length() && s.charAt(index) != s.charAt(lengthOfS - index - 1)) {
+                    flag = false;
+                    break;
+                }
+            }
+
+            if (flag) {
+                return lengthOfS;
+            }
+        }
+    }
 }
