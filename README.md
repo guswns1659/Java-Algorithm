@@ -140,6 +140,10 @@
 	- [풀이](https://github.com/guswns1659/Java-Algorithm/blob/fdebb0716cf6c5f799c5c644477fc226fb3a96e1/src/topcoder/ThePalindrome.java)
 	- 전체 탐색 문제. 
 	- 테스트 코드와 디버거의 힘을 알 수 있었던 문제.
+5. [FriendScore](https://arena.topcoder.com/#/u/practiceCode/13785/9172/10343/2/300637) 
+	- [풀이](https://github.com/guswns1659/Java-Algorithm/blob/37caba2b8d2f2a08e580930a0acb89cf75f66e02/src/topcoder/FriendScore.java)
+	- 전체 탐색 문제. 
+	- 문제 이해를 위해 그래프를 그려봄.
 	
 </details>
 
