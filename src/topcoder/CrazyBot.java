@@ -1,8 +1,14 @@
 package topcoder;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class CrazyBot {
 
+    private Logger logger = LoggerFactory.getLogger(CrazyBot.class);
+
     boolean[][] grid = new boolean[100][100];
+
     int[] vx = {1, -1, 0, 0};
     int[] vy = {0, 0, 1, -1};
 
@@ -18,7 +24,7 @@ public class CrazyBot {
         return dfs(50, 50, n);
     }
 
-    protected double dfs(int x, int y, int n) {
+    private double dfs(int x, int y, int n) {
 
         if (grid[x][y]) {
             return 0;
@@ -31,14 +37,27 @@ public class CrazyBot {
 
         double ret = 0;
 
-        for (int direction = 0; direction < 4; direction++) {
+        for (int countOfNode = 0; countOfNode < 4; countOfNode++) {
 
-            ret += dfs(x + vx[direction], y + vy[direction], n - 1) * prob[direction];
+            ret += dfs(x + vx[countOfNode], y + vy[countOfNode], n - 1) * prob[countOfNode];
 
         }
 
         grid[x][y] = false;
 
         return ret;
+    }
+
+    protected int loggerTest(int number) {
+        try {
+            if (number < 5) {
+                throw new IllegalStateException("wrong number");
+            }
+            return number;
+
+        } catch (IllegalStateException e) {
+            logger.error("error : ", e);
+            return 0;
+        }
     }
 }

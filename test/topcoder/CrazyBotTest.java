@@ -1,11 +1,11 @@
 package topcoder;
 
+import static org.assertj.core.api.Assertions.*;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 public class CrazyBotTest {
 
@@ -34,9 +34,17 @@ public class CrazyBotTest {
         // then
         for (int index = 4; index < n.length; index++) {
             assertThat(this.crazyBot.getProbability(n[index], easts[index], wests[index], souths[index], norths[index]))
-                    .isEqualTo(expects[index]);
+                .isEqualTo(expects[index]);
         }
     }
 
+    @Test
+    public void loggerTest() {
 
+        // given
+        int number = 4;
+
+        // then
+        assertThat(this.crazyBot.loggerTest(number)).isEqualTo(0);
+    }
 }
