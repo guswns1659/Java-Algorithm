@@ -47,7 +47,7 @@
 <details markdown="1">
 <summary> 백준 - 그리디 알고리즘 </summary>
 
-## 백준 - 그리디 알고리즘 / Total : 5문제
+## 백준 - 그리디 알고리즘 / Total : 13문제
 1. [ATM](https://www.acmicpc.net/problem/11399)
  	- [풀이](https://github.com/guswns1659/Java-Algorithm/commit/b0a3fcff14f2c1e4151401a13bffa8746412a3ba)
 	- [동빈나의 알고리즘 풀이전략](https://www.youtube.com/watch?v=ukkLCl9yBvE&t=806s) 영상 본 뒤 그리디 알고리즘 문제 풀이 시작 
@@ -123,6 +123,8 @@
 <details markdown="1">
 <summary>Top coder</summary>
 
+> 문제 검색 : 문제 링크에 들어가서 각 문제 이름 검색하기 
+
 1. [KiwiJuiceEasy](https://arena.topcoder.com/#/u/practiceCode/14359/13281/11020/2/305508)
 	- [풀이](https://github.com/guswns1659/Java-Algorithm/blob/8241ac110e51009ddfdea24cb6f7fa9e65636586/src/topcoder/KiwiJuiceEasy.java)
 	- 문제를 차근차근 이해하면서 문제 풀어 보기. 
@@ -144,6 +146,10 @@
 	- [풀이](https://github.com/guswns1659/Java-Algorithm/blob/37caba2b8d2f2a08e580930a0acb89cf75f66e02/src/topcoder/FriendScore.java)
 	- 전체 탐색 문제. 
 	- 문제 이해를 위해 그래프를 그려봄.
+6. [CrazyBot](https://arena.topcoder.com/#/u/practiceProblemList) 
+	- [풀이](https://github.com/guswns1659/Java-Algorithm/commit/dabd86c2d42131b2af45e1ac87dc3104809af622)
+	- DFS이용한 전체 탐색 문제.
+	- 좌표 방향에 대한 이해가 오래걸렸던 문제.
 	
 </details>
 
