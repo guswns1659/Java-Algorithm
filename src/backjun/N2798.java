@@ -8,15 +8,12 @@ import java.util.Arrays;
 public class N2798 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
         int[] input1 = Arrays.stream(br.readLine().split(" "))
                 .mapToInt(Integer::parseInt)
                 .toArray();
-
         int[] cards = Arrays.stream(br.readLine().split(" "))
                 .mapToInt(Integer::parseInt)
                 .toArray();
-
         System.out.println(test(input1, cards));
     }
 
@@ -24,23 +21,16 @@ public class N2798 {
         int goal = input1[1];
         int max = 0;
 
-        for (int x = 0; x < cards.length - 1; x++) {
-            for (int y = 1; y < cards.length - 1; y++) {
-                if (x == y) {
-                    continue;
-                }
-                for (int z = 2; z <cards.length - 1; z++) {
-                    if (y == z) {
-                        continue;
-                    }
+        for (int x = 0; x < cards.length; x++) {
+            for (int y = x+1; y < cards.length; y++) {
+                for (int z = y+1; z <cards.length; z++) {
                     int possible = cards[x] + cards[y] + cards[z];
-                    if (possible > max && possible <= goal) {
-                        max = possible;
+                    if (possible <= goal) {
+                        max = Math.max(possible, max);
                     }
                 }
             }
         }
-
         return max;
     }
 }
