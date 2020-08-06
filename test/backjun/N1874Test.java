@@ -16,9 +16,9 @@ public class N1874Test {
     }
 
 
-    @ParameterizedTest
-    @MethodSource("setUpInputs")
-    void N1874알고리즘_테스트를한다(int numberOfSequence, int[] sequences) {
-        System.out.println(N1874.test(numberOfSequence, sequences));
-    }
+//    @ParameterizedTest
+//    @MethodSource("setUpInputs")
+//    void N1874알고리즘_테스트를한다(int N, int[] sequences) {
+//        System.out.println(N1874.test(N, sequences));
+//    }
 }

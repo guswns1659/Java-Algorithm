@@ -12,11 +12,7 @@ public class N1874 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
-        int[] sequences = new int[N];
-        for (int index = 0; index < N; index++) {
-            sequences[index] = Integer.parseInt(br.readLine());
-        }
-        List<String> results = test(N, sequences);
+        List<String> results = test(N, br);
         if (results.isEmpty()) {
             System.out.println("NO");
         } else {
@@ -24,46 +20,25 @@ public class N1874 {
         }
     }
 
-    public static List<String> test(int N, int[] sequences) {
-        int sequenceIndex = 0;
-        int numberIndex = 0;
-        int[] numbers = new int[N];
-        for (int index = 1; index <= N; index++) {
-            numbers[index - 1] = index;
-        }
-        List<String> answers = new ArrayList<>();
-        Stack<Integer> stack = new Stack<>();
-        final String NO = "NO";
-        final String PLUS = "+";
-        final String MINUS = "-";
+    public static List<String> test(int N, BufferedReader br) throws IOException {
+        int count = 1;
+        Stack<Integer> numbers = new Stack<>();
+        List<String> results = new ArrayList<>();
 
-        while (sequenceIndex < N) {
-            int sequence = sequences[sequenceIndex];
-            if (!(1 <= sequence && sequence <= N)) {
+        for (int loop = 0; loop < N; loop++) {
+            int data = Integer.parseInt(br.readLine());
+            while (count <= data) {
+                numbers.push(count);
+                count++;
+                results.add("+");
+            }
+            if (numbers.get(numbers.size() - 1) == data) {
+                numbers.pop();
+                results.add("-");
+            } else {
                 return new ArrayList<>();
             }
-            if (stack.isEmpty()) {
-                if (numberIndex > N) {
-                    return new ArrayList<>();
-                }
-                stack.push(numbers[numberIndex]);
-                answers.add(PLUS);
-                numberIndex++;
-            } else {
-                if (stack.peek() > sequences[sequenceIndex]) {
-                    return new ArrayList<>();
-                }
-                if (stack.peek() < sequences[sequenceIndex]) {
-                    stack.push(numbers[numberIndex]);
-                    answers.add(PLUS);
-                    numberIndex++;
-                } else {
-                    stack.pop();
-                    answers.add(MINUS);
-                    sequenceIndex++;
-                }
-            }
         }
-        return answers;
+        return results;
     }
 }
