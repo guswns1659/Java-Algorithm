@@ -3,8 +3,7 @@ package backjun;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Stack;
 
 public class N5397 {
 
@@ -17,28 +16,34 @@ public class N5397 {
     }
 
     public static String test(String input) {
-        int cursor = 0;
         char[] inputs = input.toCharArray();
-        List<Character> answers = new ArrayList<>();
+        Stack<Character> leftStack = new Stack<>();
+        Stack<Character> rightStack = new Stack<>();
 
         for (char character : inputs) {
-            if (character == '<') {
-                cursor = (cursor <= 0) ? 0 : cursor - 1;
+            if (character == '-') {
+                if (!leftStack.isEmpty()) {
+                    leftStack.pop();
+                }
             } else if (character == '>') {
-                cursor++;
-            } else if (character == '-') {
-                answers.remove(answers.size() - 1);
-                cursor--;
+                if (!rightStack.isEmpty()) {
+                    leftStack.push(rightStack.pop());
+                }
+            } else if (character == '<') {
+                if (!leftStack.isEmpty()) {
+                    rightStack.push(leftStack.pop());
+                }
             } else {
-                cursor = (cursor > answers.size()) ? answers.size() : cursor;
-                answers.add(cursor, character);
-                cursor++;
+                leftStack.push(character);
             }
         }
-        StringBuilder answer = new StringBuilder();
-        for (char character : answers) {
-            answer.append(character);
+        while (!rightStack.isEmpty()) {
+            leftStack.add(rightStack.pop());
         }
-        return answer.toString();
+        StringBuilder answer =new StringBuilder();
+        while (!leftStack.isEmpty()) {
+            answer.append(leftStack.pop());
+        }
+        return answer.reverse().toString();
     }
 }
