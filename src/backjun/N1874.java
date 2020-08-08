@@ -26,13 +26,12 @@ public class N1874 {
         List<String> results = new ArrayList<>();
 
         for (int loop = 0; loop < N; loop++) {
-            int data = Integer.parseInt(br.readLine());
-            while (count <= data) {
-                numbers.push(count);
-                count++;
+            int current = Integer.parseInt(br.readLine());
+            while (count <= current) {
+                numbers.push(count++);
                 results.add("+");
             }
-            if (numbers.get(numbers.size() - 1) == data) {
+            if (numbers.peek() == current) {
                 numbers.pop();
                 results.add("-");
             } else {
