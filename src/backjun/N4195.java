@@ -39,25 +39,24 @@ public class N4195 {
         }
     }
 
-    public static String find(String x) {
-        if (x.equals(parent.get(x))) {
-            return x;
-        } else {
-            String p = find(parent.get(x));
-            parent.put(x, p);
-            return parent.get(x);
-        }
-    }
-
-    public static void union(String x, String y) {
+    private static void union(String x, String y) {
         String x2 = find(x);
         String y2 = find(y);
 
         if (!x2.equals(y2)) {
             parent.put(y2, x2);
-            int x2Number = networks.get(x2);
-            int y2Number = networks.get(y2);
-            networks.put(x2, x2Number+y2Number);
+            int x2Networks = networks.get(x2);
+            int y2Networks = networks.get(y2);
+            networks.put(x2, x2Networks+y2Networks);
         }
+    }
+
+    private static String find(String x) {
+        if (x.equals(parent.get(x))) {
+            return x;
+        }
+        String p = find(parent.get(x));
+        parent.put(x, p);
+        return p;
     }
 }
