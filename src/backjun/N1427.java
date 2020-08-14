@@ -13,15 +13,13 @@ public class N1427 {
     }
 
     public static String test(String number) {
-        char[] chars = number.toCharArray();
-        List<Integer> charToNumbers = new ArrayList<>();
-        for (char character : chars) {
-            charToNumbers.add((int) character - 48);
+        for (int digit = 9; digit > -1; digit--) {
+            for (int index = 0; index < number.length(); index++) {
+                if (number.charAt(index) - '0' == digit) {
+                    System.out.print(digit);
+                }
+            }
         }
-
-        charToNumbers.sort(Comparator.reverseOrder());
-        StringBuilder answer = new StringBuilder();
-        charToNumbers.stream().forEach(num -> answer.append(num));
-        return answer.toString();
+        return "";
     }
 }
