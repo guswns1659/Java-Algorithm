@@ -14,14 +14,6 @@ class Coordinate {
         this.x = x;
         this.y = y;
     }
-
-    @Override
-    public String toString() {
-        return "Coordinate{" +
-                "x=" + x +
-                ", y=" + y +
-                '}';
-    }
 }
 
 public class N11650 {
@@ -44,15 +36,10 @@ public class N11650 {
         }
 
         coordinates.sort((c1, c2) -> {
-            if (c1.x > c2.x) {
-                return 1;
-            }
             if (c1.x == c2.x) {
-                if (c1.y > c2.y) {
-                    return 1;
-                }
+                return Integer.compare(c1.y, c2.y);
             }
-            return -1;
+            return Integer.compare(c1.x, c2.x);
         });
 
         for (Coordinate coordinate : coordinates) {
