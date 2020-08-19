@@ -32,8 +32,6 @@ public class N1302 {
             max = Math.max(soldBooks.get(book), max);
         }
 
-//        long max = soldBooks.values().stream().mapToInt(i->i).max().getAsInt();
-
         List<String> bestSeller = new ArrayList<>();
 
         for (String title : soldBooks.keySet()) {
