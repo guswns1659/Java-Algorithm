@@ -23,39 +23,36 @@ public class N1235 {
     }
 
     public static int test(String[][] castle) {
-        int rowCheck = 0;
-        int columnCheck = 0;
         int N = castle.length;
         int M = castle[0].length;
 
-        // 모든 행 검사
+        int[] rowStatus = new int[N];
+        int[] columnStatus = new int[M];
+
+        // X가 있다면 그 행과 열은 모두 존재하는 것.
         for (int row = 0; row < N; row++) {
-            boolean flag = false;
             for (int column = 0; column < M; column++) {
-                if (flag) {
-                    break;
-                }
                 if (castle[row][column].equals("X")) {
-                    flag = true;
-                    rowCheck++;
+                    rowStatus[row] = 1;
+                    columnStatus[column] = 1;
                 }
             }
         }
 
-        // 모든 열 검사
-        for (int column = 0; column < M; column++) {
-            boolean flag = false;
-            for (int row = 0; row < N; row++) {
-                if (flag) {
-                    break;
-                }
-                if (castle[row][column].equals("X")) {
-                    flag = true;
-                    columnCheck++;
-                }
+        int rowCheck = 0;
+        for (int exist : rowStatus) {
+            if (exist == 0) {
+                rowCheck++;
             }
         }
 
-        return Math.max((N - rowCheck),(M - columnCheck));
+        int columnCheck = 0;
+        for (int exist : columnStatus) {
+            if (exist == 0) {
+                columnCheck++;
+            }
+        }
+
+        return Math.max(rowCheck, columnCheck);
     }
 }
