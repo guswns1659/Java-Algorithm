@@ -1,4 +1,4 @@
-package backjun;
+package backjun.sorting;
 
 import java.io.BufferedReader;
 import java.io.IOException;
