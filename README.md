@@ -9,7 +9,7 @@
 - [Algorithm] : 문제 풀이한 코드 커밋
 
 <details markdown="1">
-<summary>  </summary>
+<summary>구현</summary>
 
 1. [Roman to Integer](https://leetcode.com/problems/roman-to-integer/)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/blob/master/src/leetcodeEasy/RomanToInt.java)
@@ -44,7 +44,7 @@
 </details>
 
 <details markdown="1">
-<summary> 정렬 </summary>
+<summary>정렬</summary>
 
 1. [ATM](https://www.acmicpc.net/problem/11399)
  	- [풀이](https://github.com/guswns1659/Java-Algorithm/commit/b0a3fcff14f2c1e4151401a13bffa8746412a3ba)
@@ -149,7 +149,8 @@
 	- DFS이용한 전체 탐색 문제.
 	- 좌표 방향에 대한 이해가 오래걸렸던 문제.
 7. [공유기설치](https://www.acmicpc.net/problem/2110)
-	
+	- [풀이](https://github.com/guswns1659/Java-Algorithm/issues/1)
+	- 이진탐색 이용한 탐색 문제. 
 	
 	
 </details>
