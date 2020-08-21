@@ -9,9 +9,8 @@
 - [Algorithm] : 문제 풀이한 코드 커밋
 
 <details markdown="1">
-<summary> leetCode Easy </summary>
+<summary>  </summary>
 
-## [leetCode Easy](https://leetcode.com/) / Total : 6문제
 1. [Roman to Integer](https://leetcode.com/problems/roman-to-integer/)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/blob/master/src/leetcodeEasy/RomanToInt.java)
     - HashMap, stack 이용해 문제 풀이
@@ -45,9 +44,8 @@
 </details>
 
 <details markdown="1">
-<summary> 백준 - 그리디 알고리즘 </summary>
+<summary> 정렬 </summary>
 
-## 백준 - 그리디 알고리즘 / Total : 13문제
 1. [ATM](https://www.acmicpc.net/problem/11399)
  	- [풀이](https://github.com/guswns1659/Java-Algorithm/commit/b0a3fcff14f2c1e4151401a13bffa8746412a3ba)
 	- [동빈나의 알고리즘 풀이전략](https://www.youtube.com/watch?v=ukkLCl9yBvE&t=806s) 영상 본 뒤 그리디 알고리즘 문제 풀이 시작 
@@ -121,7 +119,7 @@
 </details>
 
 <details markdown="1">
-<summary>Top coder</summary>
+<summary>탐색</summary>
 
 > 문제 검색 : 문제 링크에 들어가서 각 문제 이름 검색하기 
 
@@ -150,6 +148,9 @@
 	- [풀이](https://github.com/guswns1659/Java-Algorithm/commit/dabd86c2d42131b2af45e1ac87dc3104809af622)
 	- DFS이용한 전체 탐색 문제.
 	- 좌표 방향에 대한 이해가 오래걸렸던 문제.
+7. [공유기설치](https://www.acmicpc.net/problem/2110)
+	
+	
 	
 </details>
 
