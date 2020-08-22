@@ -154,6 +154,9 @@
 8. [나무자르기](https://www.acmicpc.net/problem/2805)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/2)
     - 이진탐색 이용한 탐색 문제.
+9. [숫자카드](https://www.acmicpc.net/problem/10815)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/3)
+    - Collections.binarySearch() 이용하는 단순 문제
 	
 	
 </details>
