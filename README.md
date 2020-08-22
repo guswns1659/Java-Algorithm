@@ -151,6 +151,9 @@
 7. [공유기설치](https://www.acmicpc.net/problem/2110)
 	- [풀이](https://github.com/guswns1659/Java-Algorithm/issues/1)
 	- 이진탐색 이용한 탐색 문제. 
+8. [나무자르기](https://www.acmicpc.net/problem/2805)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/2)
+    - 이진탐색 이용한 탐색 문제.
 	
 	
 </details>
