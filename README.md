@@ -157,6 +157,9 @@
 9. [숫자카드](https://www.acmicpc.net/problem/10815)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/3)
     - Collections.binarySearch() 이용하는 단순 문제
+10. [랜선자르기](https://www.acmicpc.net/problem/1654)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/4)
+    - 이진탐색 이용.
 	
 	
 </details>
