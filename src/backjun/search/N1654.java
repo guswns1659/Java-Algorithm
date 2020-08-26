@@ -28,7 +28,7 @@ public class N1654 {
 
         long max = cables.get(cables.size() - 1);
         long min = 1;
-//        long maxLength = 0;
+        long maxLength = 0;
 
         while (min <= max) {
             long mid = (min + max) / 2;
@@ -41,7 +41,7 @@ public class N1654 {
             if (sum < need) {
                 max = mid - 1;
             } else {
-//                maxLength = Math.max(maxLength, mid);
+                maxLength = Math.max(maxLength, mid);
                 min = mid + 1;
             }
         }

@@ -164,4 +164,12 @@
 	
 </details>
 
-## [leetCode Medium](https://leetcode.com/)
+<details markdown="1">
+<summary>문자열</summary>
+
+1. [괄호](https://www.acmicpc.net/problem/9012)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/7)
+    - 스택 이용해서 푸는 괄호 문제
+
+</details>
+
