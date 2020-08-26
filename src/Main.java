@@ -2,37 +2,27 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int m = Integer.parseInt(br.readLine());
+        char[] s = br.readLine().toCharArray();
 
-    static Map<Integer, Integer> parent = new HashMap<>();
+        int result = 0;
+        int patternCount = 0;
 
-    public static void main(String[] args) {
-        for (int i = 1; i < 5; i++) {
-            parent.put(i, i);
+        for (int index = 1; index < s.length - 1; index++) {
+            if (s[index - 1] == 'I' && s[index] == 'O' && s[index+1] == 'I') {
+                patternCount++;
+                if (patternCount == n) {
+                    patternCount--;
+                    result++;
+                }
+                index++;
+            } else {
+                patternCount = 0;
+            }
         }
-
-        union(1,4);
-        union(2,4);
-
-        for (int i = 1; i < 5; i++) {
-            System.out.println(find(i));
-        }
-    }
-
-    public static void union(int x, int y) {
-        int x2 = find(x);
-        int y2 = find(y);
-
-        if (x2 != y2) {
-            parent.put(y2, x2);
-        }
-    }
-
-    private static int find(int x) {
-        if (x == parent.get(x)) {
-            return x;
-        }
-        int p = find(parent.get(x));
-        parent.put(x, p);
-        return parent.get(x);
+        System.out.println(result);
     }
 }

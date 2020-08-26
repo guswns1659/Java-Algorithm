@@ -170,6 +170,10 @@
 1. [괄호](https://www.acmicpc.net/problem/9012)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/7)
     - 스택 이용해서 푸는 괄호 문제
+2. [IOIOI](https://www.acmicpc.net/problem/5525)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/8)
+    - 문자열 패턴 알고리즘 문제 
+
 
 </details>
 
