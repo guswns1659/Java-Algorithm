@@ -160,6 +160,9 @@
 10. [랜선자르기](https://www.acmicpc.net/problem/1654)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/4)
     - 이진탐색 이용.
+11. [전화번호 목록](https://programmers.co.kr/learn/courses/30/lessons/42577)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/10)
+    - 해시 사용해서 중복일 경우 제거. 
 	
 	
 </details>
