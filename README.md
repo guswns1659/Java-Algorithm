@@ -177,6 +177,14 @@
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/8)
     - 문자열 패턴 알고리즘 문제 
 
+</details>
+
+<details markdown="1">
+<summary>DFS/BFS</summary>
+
+1. [타켓넘버](https://programmers.co.kr/learn/courses/30/lessons/43165)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/11)
+    - BFS 기본 문제. 개념만으로는 풀 수 없고 응용을 해야 한다.
 
 </details>
 
