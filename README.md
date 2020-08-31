@@ -188,6 +188,9 @@
 2. [네트워크](https://programmers.co.kr/learn/courses/30/lessons/43162)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/12)
     - Union-Find를 이용한 문제.
+3. [DFS와 BFS](https://www.acmicpc.net/problem/1260)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/13)
+    - 주어진 정점간의 관계를 이차원 배열로 표현한 뒤 dfs, bfs
 
 </details>
 
