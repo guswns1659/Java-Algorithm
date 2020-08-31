@@ -1,28 +1,16 @@
 package programmers.hash;
 
-import java.util.HashMap;
-
 public class PhoneBook {
 
     public static boolean solution(String[] phone_book) {
+        for (int index1 = 0; index1 < phone_book.length; index1++) {
+            for (int index2 = 0; index2 < phone_book.length; index2++) {
+                String A = phone_book[index1];
+                String B = phone_book[index2];
 
-        HashMap<String, Integer> map = new HashMap<>();
-        int N = phone_book.length;
-
-        for (String phoneNumber : phone_book) {
-            map.put(phoneNumber, 1);
-        }
-
-        for (String A : phone_book) {
-            for (String B : phone_book) {
-                if (A.equals(B)) {
+                if (index1 == index2 || index1 > index2) {
                     continue;
                 }
-                if (map.get(A) == N - 1) {
-                    continue;
-                }
-
-                map.put(A, map.get(A) + 1);
 
                 int ALength = A.length();
                 int BLength = B.length();

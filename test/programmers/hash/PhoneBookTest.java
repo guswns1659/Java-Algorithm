@@ -12,7 +12,7 @@ public class PhoneBookTest {
 
     private static Stream<Arguments> setUpInputs() {
         return Stream.of(
-                Arguments.of((Object) new String[]{"119", "97674223", "1195524421"}),
+                Arguments.of((Object) new String[]{"97674223", "1195524421", "119"}),
                 Arguments.of((Object) new String[]{"12","123","1235","567","88"})
         );
     }
