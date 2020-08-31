@@ -191,6 +191,9 @@
 3. [DFS와 BFS](https://www.acmicpc.net/problem/1260)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/13)
     - 주어진 정점간의 관계를 이차원 배열로 표현한 뒤 dfs, bfs
+4. [바이러스](https://www.acmicpc.net/problem/2606)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/14)
+    - Union-Find를 조금 응용한 문제
 
 </details>
 
