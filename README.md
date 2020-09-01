@@ -116,6 +116,13 @@
 13. [한 줄로 서기](https://www.acmicpc.net/problem/1138)
 	- [풀이]()
 	- 모든 경우의 수를 계산해야 하는 문제 
+14. [k번째수](https://programmers.co.kr/learn/courses/30/lessons/42748)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/15)
+    - 기본 배열의 정렬을 이해한다면 풀 문제. 	
+15. [가장 큰 수](https://programmers.co.kr/learn/courses/30/lessons/42748)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/16)
+    - Comparator를 잘 활용해서 풀어야하는 문제. 자릿수 별로 비교해 정렬하는 문제
+
 </details>
 
 <details markdown="1">
