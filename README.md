@@ -203,6 +203,9 @@
 4. [바이러스](https://www.acmicpc.net/problem/2606)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/14)
     - Union-Find를 조금 응용한 문제
+5. [미로찾기](https://www.acmicpc.net/problem/2178)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/22)
+    - DFS를 큐로 구현하는 기본 문제
 
 </details>
 

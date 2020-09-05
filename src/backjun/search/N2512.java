@@ -1,49 +1,40 @@
 package backjun.search;
 
-import java.io.*;
 import java.util.*;
+import java.io.*;
 
 public class N2512 {
-
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int regionCount = Integer.parseInt(br.readLine());
-        List<Integer> budgets = new ArrayList<>(regionCount);
 
+        int cityCount = Integer.parseInt(br.readLine());
+        List<Integer> budgets = new ArrayList<>();
         String[] budgetString = br.readLine().split(" ");
-        for (String budget : budgetString) {
-            budgets.add(Integer.parseInt(budget));
+
+        for (int index = 0; index < cityCount; index++) {
+            budgets.add(Integer.parseInt(budgetString[index]));
         }
-        int totalBudget = Integer.parseInt(br.readLine());
-        System.out.println(test(budgets, totalBudget));
 
-    }
-
-    public static long test(List<Integer> budgets, int totalBudgets) {
+        int budgetLimit = Integer.parseInt(br.readLine());
         Collections.sort(budgets);
 
         long max = budgets.get(budgets.size() - 1);
         long min = 1;
 
-        while (min <= max) {
-            long mid = (min + max) / 2;
-            long sum = 0;
-
+        while (max >= min) {
+            long mid = (max + min) / 2;
+            int sum = 0;
             for (int budget : budgets) {
-                long gap = budget - mid;
-                if (gap >= 0) {
-                    sum += mid;
-                } else {
-                    sum += budget;
-                }
+                sum += (mid >= budget) ? budget : mid;
             }
 
-            if (sum < totalBudgets) {
-                min = mid + 1;
-            } else {
+            if (sum > budgetLimit) {
                 max = mid - 1;
+            } else {
+                min = mid + 1;
             }
         }
-        return max;
+
+        System.out.println(max);
     }
 }
