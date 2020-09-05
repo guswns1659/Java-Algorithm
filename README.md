@@ -170,7 +170,9 @@
 11. [전화번호 목록](https://programmers.co.kr/learn/courses/30/lessons/42577)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/10)
     - 해시 사용해서 중복일 경우 제거. 
-	
+12. [트리 순회](https://www.acmicpc.net/problem/1991)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/21)
+    - 트리 순회에 대한 개념 정립.
 	
 </details>
 
