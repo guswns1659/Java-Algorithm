@@ -206,6 +206,9 @@
 5. [미로찾기](https://www.acmicpc.net/problem/2178)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/22)
     - DFS를 큐로 구현하는 기본 문제
+6. [그림](https://www.acmicpc.net/problem/1926)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/24)
+    - DFS를 응용한 문제
 
 </details>
 
