@@ -35,11 +35,11 @@ public class N2178 {
 
     private static void bfs(int x, int y) {
         Queue<int[]> queue = new LinkedList<>();
+        visited[x][y] = true;
         queue.offer(new int[]{x, y});
 
         while (!queue.isEmpty()) {
             int[] location = queue.poll();
-            visited[x][y] = true;
 
             for (int dir = 0; dir < 4; dir++) {
                 int x2 = location[0] + dx[dir];
