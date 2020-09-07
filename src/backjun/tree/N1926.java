@@ -8,7 +8,7 @@ public class N1926 {
     static int[] dx = new int[]{1, -1, 0, 0};
     static int[] dy = new int[]{0, 0, 1, -1};
     static int[][] map;
-    static int[][] visited;
+    static boolean[][] visited;
     static int N, M;
 
     public static void main(String[] args) throws IOException {
@@ -18,7 +18,7 @@ public class N1926 {
         M = Integer.parseInt(input[1]);
 
         map = new int[N][M];
-        visited = new int[N][M];
+        visited = new boolean[N][M];
 
         int drawingCount = 0;
         int maxArea = 0;
@@ -33,10 +33,10 @@ public class N1926 {
 
         for (int row = 0; row < N; row++) {
             for (int column = 0; column < M; column++) {
-                if (map[row][column] != 0 && visited[row][column] != 1) {
-                    maxArea = Math.max(dfs(row,column), maxArea);
-                    drawingCount++;
-                }
+                // 1이 아니거나 이미 방문한 노드면 continue;
+                if (map[row][column] != 1 || visited[row][column]) continue;
+                maxArea = Math.max(dfs(row,column), maxArea);
+                drawingCount++;
             }
         }
 
@@ -47,7 +47,7 @@ public class N1926 {
     public static int dfs(int row, int column) {
 
         Queue<int[]> q = new LinkedList<>();
-        visited[row][column] = 1;
+        visited[row][column] = true;
         q.offer(new int[]{row, column});
         int area = 0;
 
@@ -60,9 +60,9 @@ public class N1926 {
                 int y2 = location[1] + dy[index];
 
                 if (x2 < 0 || x2 >= N || y2 <0 || y2 >= M) continue;
-                if (map[x2][y2] != 1 || visited[x2][y2] != 0) continue;
+                if (map[x2][y2] != 1 || visited[x2][y2]) continue;
 
-                visited[x2][y2] = 1;
+                visited[x2][y2] = true;
                 q.offer(new int[]{x2, y2});
             }
         }
