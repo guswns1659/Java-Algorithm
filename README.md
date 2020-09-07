@@ -209,6 +209,9 @@
 6. [그림](https://www.acmicpc.net/problem/1926)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/24)
     - DFS를 응용한 문제
+7. [토마토](https://www.acmicpc.net/problem/7576)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/25)
+    - 여러시작점이 있는 DFS 문제
 
 </details>
 
