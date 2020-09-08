@@ -1,4 +1,4 @@
-package backjun.tree;
+package backjun.bfs;
 
 import java.util.*;
 import java.io.*;

@@ -1,4 +1,4 @@
-package backjun.tree;
+package backjun.bfs;
 
 import java.io.BufferedReader;
 import java.io.IOException;
