@@ -5,7 +5,8 @@ import java.io.*;
 
 public class N1697 {
 
-    static int[] dist = new int[200000];
+    // 인덱스 200000을 포함하기 위해 배열 크기를 200001로 초기화한다.
+    static int[] dist = new int[200001];
     static int N, M;
 
     public static void main(String[] args) throws IOException {
@@ -25,7 +26,6 @@ public class N1697 {
         dist[N] = 0;
         q.offer(N);
 
-        // while문 조건을 dist[M] = -1일 때까지만 해야지 런타임 에러를 방지할 수 있다. 불필요한 연산 줄임.
         while (dist[M] == -1) {
             int location = q.poll();
 
@@ -40,8 +40,11 @@ public class N1697 {
                     x2 = location * 2;
                 }
 
-                if (x2 > 100000 || x2 < 0) continue;
-                // 이미 방문한 위치
+                /*
+                 * 200000도 배열 인덱스를 벗어나기 때문에 조건문에 포함시켜야 한다. 아니면 배열 크기를 200001로 초기화한다.
+                 */
+                if (x2 > 200000 || x2 < 0) continue;
+                // 이미 방문한 위치! 조건을 0이상으로 해야 한다.
                 if (dist[x2] >= 0) continue;
                 dist[x2] = dist[location] + 1;
                 q.offer(x2);

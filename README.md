@@ -215,6 +215,9 @@
 8. [불!](https://www.acmicpc.net/problem/4179)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/27)
     - 시작점이 다르 종류인 DFS 문제
+9. [숨바꼭질](https://www.acmicpc.net/problem/1697)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/28)
+    - 1차원 배열 BFS 문제
 
 </details>
 
