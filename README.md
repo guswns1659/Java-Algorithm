@@ -211,13 +211,16 @@
     - DFS를 응용한 문제
 7. [토마토](https://www.acmicpc.net/problem/7576)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/25)
-    - 여러시작점이 있는 DFS 문제
+    - 여러 시작점이 있는 DFS 문제
 8. [불!](https://www.acmicpc.net/problem/4179)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/27)
-    - 시작점이 다르 종류인 DFS 문제
+    - 시작점이 다른 종류인 DFS 문제
 9. [숨바꼭질](https://www.acmicpc.net/problem/1697)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/28)
     - 1차원 배열 BFS 문제
+10. [단지번호붙이기](https://www.acmicpc.net/problem/2667)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/30)
+    - 여러 시작점이 있지만 서로 구분해야 하는 문제
 
 </details>
 
