@@ -28,6 +28,7 @@ public class LineDfs {
 
         System.out.println(test(C, B));
     }
+
     public static int test(int c, int b) {
         // main으로 실행할 땐 지워야하는 조건들
         C = c;
@@ -44,38 +45,37 @@ public class LineDfs {
          * 문제의 원인 q.poll()할 때마다 초가 증가하는데 q.poll()할 때 초가 증가하는 것이 아니라 트리의 깊이의 해당하는 노드가 끝났을 때 추가해야함.
          */
 
-
-        while (!q.isEmpty()) {
-            int brownLocation = q.poll();
+        while (true) {
             second++;
+            int conyLocation = getConyLocation(second + 1);
+            if (conyLocation > 200000) return -1;
+            conyDist[conyLocation] = second;
 
-            // 브라운이 해당 위치에 도달한 시간과 현재 시간이 같을 때만 코니 위치와 브라운의 위치가 같은지 판단한다.
-            if (brownDist[brownLocation] == second) {
-                int conyLocation = getConyLocation(second + 1);
-                // 이동한 코니 위치가 범위를 벗어나는 경우
-                if (conyLocation > 200000 || conyLocation < 0) return -1;
-                conyDist[conyLocation] = second;
-
-                // 위치가 같을 때 그 위치에 도달한 시간이 같은지 확인, 같다면 그 시간 리턴
+            for (int brownLocation : q) {
+                // 브라운이 해당 위치에 도달한 시간과 현재 시간이 같을 때만 코니 위치와 브라운의 위치가 같은지 판단한다.
                 if (conyLocation == brownLocation && conyDist[conyLocation] == brownDist[brownLocation]) {
                     return second;
                 }
             }
 
-            int brownLocation2;
+            // 안에 for문을 돌고 while문으로 갈 줄 알았는데 q가 채워지니 다시 바깥 for문으로 나온다.
+            int size = q.size();
+            for (int index = 0; index < size; index++) {
+                int brownLocation = q.poll();
+                int brownLocation2;
 
-            for (int loop = 1; loop < 4; loop++) {
-                if (loop == 1 ) brownLocation2 = brownLocation - 1;
-                else if (loop == 2) brownLocation2 = brownLocation + 1;
-                else brownLocation2 = brownLocation * 2;
+                for (int loop = 1; loop < 4; loop++) {
+                    if (loop == 1 ) brownLocation2 = brownLocation - 1;
+                    else if (loop == 2) brownLocation2 = brownLocation + 1;
+                    else brownLocation2 = brownLocation * 2;
 
-                if (brownLocation2 > 200000 || brownLocation2 < 0) continue;
-                if (brownDist[brownLocation2] >= 0) continue;
-                brownDist[brownLocation2] = brownDist[brownLocation] + 1;
-                q.offer(brownLocation2);
+                    if (brownLocation2 > 200000 || brownLocation2 < 0) continue;
+                    if (brownDist[brownLocation2] >= 0) continue;
+                    brownDist[brownLocation2] = brownDist[brownLocation] + 1;
+                    q.offer(brownLocation2);
+                }
             }
         }
-        return -1;
     }
 
     private static int getConyLocation(int num) {
