@@ -40,6 +40,10 @@
     - char[]는 stream으로 사용하려면 복잡하다. 그냥 for문 쓰기.	
 	- replaceFirst()와 replace의 차이는 여러개를 바꾸냐 마느냐의 차이다. 
     - 반복문으로 해결되는 데 굳이 스택을 사용..
+7. [나머지 한 점](https://programmers.co.kr/learn/courses/18)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/31)
+    - 직사각형의 나머지 한점을 구하는 문제. 
+    - 해시를 사용했지만 XOR를 이용하면 A, B, B 있을 때 A를 구하기가 쉽다. 
 
 </details>
 
