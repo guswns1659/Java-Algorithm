@@ -3,7 +3,7 @@ package backjun.string;
 import java.util.*;
 import java.io.*;
 
-public class N9012 {
+public class N9012Test {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int testCase = Integer.parseInt(br.readLine());

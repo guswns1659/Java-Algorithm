@@ -1,9 +1,6 @@
 package programmers.graph;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Network {
 
@@ -18,14 +15,9 @@ public class Network {
 
         for (int row = 0; row < computers.length; row++) {
             for(int column = 0; column < computers[row].length; column++) {
-                if (row == column) {
-                    continue;
-                }
-                if (computers[row][column] == 1) {
-                    if (row < column) {
-                        union(row + 1, column + 1);
-                    }
-                }
+                if (computers[row][column] == 0) continue;
+                if (row >= column) continue;
+                union(row + 1, column + 1);
             }
         }
 
@@ -60,4 +52,5 @@ public class Network {
         parent.put(x, p);
         return p;
     }
+
 }

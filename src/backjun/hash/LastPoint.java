@@ -10,22 +10,8 @@ class LastPoint {
     }
 
     public static int[] solution(int[][] v) {
-        HashMap<Integer, Integer> xCoord = new HashMap<>();
-        HashMap<Integer, Integer> yCoord = new HashMap<>();
-        int x = 0;
-        int y = 0;
-
-        for (int[] coord : v) {
-            xCoord.merge(coord[0], 1, Integer::sum);
-            yCoord.merge(coord[1], 1, Integer::sum);
-        }
-
-        for (int key : xCoord.keySet()) {
-            if (xCoord.get(key) == 1) x = key;
-        }
-        for (int key : yCoord.keySet()) {
-            if (yCoord.get(key) == 1) y = key;
-        }
+        int x = v[0][0]^v[1][0]^v[2][0];
+        int y = v[0][1]^v[1][1]^v[2][1];
 
         return new int[]{x, y};
     }

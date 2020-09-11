@@ -24,12 +24,11 @@ public class N2110 {
 
     public static int test(List<Integer> homes, int router) {
         Collections.sort(homes);
-        int start = homes.get(1) - homes.get(0);
-        int end = homes.get(homes.size()-1) - homes.get(0);
-        int result = 0;
+        int min = homes.get(1) - homes.get(0);
+        int max = homes.get(homes.size()-1) - homes.get(0);
 
-        while (start <= end) {
-            int mid = (start + end) / 2;
+        while (min <= max) {
+            int mid = (min + max) / 2;
             int value = homes.get(0);
             int count = 1;
             for (int index = 1; index < homes.size(); index++) {
@@ -39,12 +38,11 @@ public class N2110 {
                 }
             }
             if (count >= router) {
-                start = mid + 1;
-                result = mid;
+                min = mid + 1;
             } else {
-                end = mid - 1;
+                max = mid - 1;
             }
         }
-        return result;
+        return max;
     }
 }
