@@ -74,7 +74,7 @@ public class N4179 {
                 int x2 = location[0] + dx[dir];
                 int y2 = location[1] + dy[dir];
                 if (x2 < 0 || x2 >= N || y2 < 0 || y2 >= M) continue;
-                if (fireStatus[x2][y2] >= 0 || map[x2][y2] == '#') continue;
+                if (fireStatus[x2][y2] >= 0) continue;
                 queue.offer(new int[]{x2, y2});
                 fireStatus[x2][y2] = fireStatus[location[0]][location[1]] + 1;
             }
@@ -94,7 +94,7 @@ public class N4179 {
                 int y2 = location[1] + dy[dir];
                 // 배열을 벗어났을때가 가장 빨리 탈출했을 때!!
                 if (x2 < 0 || x2 >= N || y2 < 0 || y2 >= M) return personStatus[location[0]][location[1]] + 1;
-                if (personStatus[x2][y2] >= 0 || map[x2][y2] == '#') continue;
+                if (personStatus[x2][y2] >= 0) continue;
                 if (fireStatus[x2][y2] != -1 && fireStatus[x2][y2] <= personStatus[location[0]][location[1]] + 1) continue;
                 queue.offer(new int[]{x2, y2});
                 personStatus[x2][y2] = personStatus[location[0]][location[1]] + 1;
