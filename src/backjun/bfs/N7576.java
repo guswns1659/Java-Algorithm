@@ -10,7 +10,6 @@ public class N7576 {
 
     static int[] dx = new int[]{1, -1, 0, 0};
     static int[] dy = new int[]{0, 0, 1, -1};
-    static int[][] map;
     static int[][] dist;
     static int M, N;
     static Queue<int[]> q = new LinkedList<>();
@@ -21,7 +20,6 @@ public class N7576 {
         M = Integer.parseInt(MN[0]);
         N = Integer.parseInt(MN[1]);
 
-        map = new int[N][M];
         dist = new int[N][M];
 
         // map과 dist 초기화
@@ -29,7 +27,6 @@ public class N7576 {
             String[] oneRow = br.readLine().split(" ");
             for (int column = 0; column < M; column++) {
                 int tomatoStatus = Integer.parseInt(oneRow[column]);
-                map[row][column] = tomatoStatus;
                 if (tomatoStatus == 1) {
                     q.offer(new int[]{row, column});
                 }
@@ -49,7 +46,7 @@ public class N7576 {
 
                 if (x2 < 0 || x2 >= N || y2 < 0 || y2 >= M) continue;
                 // 익은 토마토거나 비어있는 경우
-                if (dist[x2][y2] >= 0 || map[x2][y2] != 0) continue;
+                if (dist[x2][y2] >= 0) continue;
                 q.offer(new int[]{x2,y2});
                 dist[x2][y2] = dist[location[0]][location[1]] + 1;
             }

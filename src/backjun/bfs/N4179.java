@@ -10,7 +10,7 @@ public class N4179 {
 
     static int[] dx = new int[]{1, -1, 0, 0};
     static int[] dy = new int[]{0, 0, 1, -1};
-    static char[][] map;
+//    static char[][] map;
     static int[][] fireStatus;
     static int[][] personStatus;
     static int[] personStart;
@@ -23,7 +23,7 @@ public class N4179 {
 
         N = Integer.parseInt(NM[0]);
         M = Integer.parseInt(NM[1]);
-        map = new char[N][M];
+//        map = new char[N][M];
         fireStatus = new int[N][M];
         personStatus = new int[N][M];
 
@@ -32,7 +32,7 @@ public class N4179 {
             String oneRow = br.readLine();
             for (int c = 0; c < M; c++) {
                 char mapStatus = oneRow.charAt(c);
-                map[r][c] = mapStatus;
+//                map[r][c] = mapStatus;
 
                 if (mapStatus == 'J') {
                     personStart = new int[]{r, c};
@@ -95,12 +95,9 @@ public class N4179 {
                 // 배열을 벗어났을때가 가장 빨리 탈출했을 때!!
                 if (x2 < 0 || x2 >= N || y2 < 0 || y2 >= M) return personStatus[location[0]][location[1]] + 1;
                 if (personStatus[x2][y2] >= 0 || map[x2][y2] == '#') continue;
+                if (fireStatus[x2][y2] != -1 && fireStatus[x2][y2] <= personStatus[location[0]][location[1]] + 1) continue;
                 queue.offer(new int[]{x2, y2});
                 personStatus[x2][y2] = personStatus[location[0]][location[1]] + 1;
-                // fireStatus의 값과 비교해서 작은 값만 남긴다. (불보다 빨리 도착함)
-                if (personStatus[x2][y2] >= fireStatus[x2][y2]) {
-                    personStatus[x2][y2] = 0;
-                }
             }
         }
         return -1;
