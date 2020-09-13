@@ -2,10 +2,10 @@ package line;
 
 import java.util.*;
 
-public class Number1 {
+public class Number2 {
     public static void main(String[] args) {
-        Number1 number1 = new Number1();
-        System.out.println(Arrays.toString(number1.solution(new int[]{11, 2, 9, 13, 24}, new int[]{9, 2, 13, 24, 11})));
+        Number2 number2 = new Number2();
+        System.out.println(Arrays.toString(number2.solution(new int[]{11, 2, 9, 13, 24}, new int[]{9, 2, 13, 24, 11})));
     }
 
     public int[] solution(int[] ball, int[] order) {
