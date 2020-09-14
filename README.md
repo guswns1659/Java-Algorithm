@@ -225,6 +225,9 @@
 10. [단지번호붙이기](https://www.acmicpc.net/problem/2667)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/30)
     - 여러 시작점이 있지만 서로 구분해야 하는 문제
+11. [적록색약](https://www.acmicpc.net/problem/10026)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/32)
+    - 여러 시작점이 있고 시작점의 유형을 구분해야 하는 문제 
 
 </details>
 
