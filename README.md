@@ -117,9 +117,7 @@
 	- 답을 봤지만 이해가 더 필요.
 	- Comparable 구현할 때 오름차순일 경우, 값을 비교한 뒤 작으면 -1, 크면 +1. 
 	- 내림차순일 경우 값을 비교한 뒤 작으면 +1, 크면 -1.
-13. [한 줄로 서기](https://www.acmicpc.net/problem/1138)
-	- [풀이]()
-	- 모든 경우의 수를 계산해야 하는 문제 
+ 
 14. [k번째수](https://programmers.co.kr/learn/courses/30/lessons/42748)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/15)
     - 기본 배열의 정렬을 이해한다면 풀 문제. 	
@@ -130,7 +128,7 @@
 </details>
 
 <details markdown="1">
-<summary>탐색</summary>
+<summary>전체탐색</summary>
 
 > 문제 검색 : 문제 링크에 들어가서 각 문제 이름 검색하기 
 
@@ -155,29 +153,31 @@
 	- [풀이](https://github.com/guswns1659/Java-Algorithm/blob/37caba2b8d2f2a08e580930a0acb89cf75f66e02/src/topcoder/FriendScore.java)
 	- 전체 탐색 문제. 
 	- 문제 이해를 위해 그래프를 그려봄.
-6. [CrazyBot](https://arena.topcoder.com/#/u/practiceProblemList) 
-	- [풀이](https://github.com/guswns1659/Java-Algorithm/commit/dabd86c2d42131b2af45e1ac87dc3104809af622)
-	- DFS이용한 전체 탐색 문제.
-	- 좌표 방향에 대한 이해가 오래걸렸던 문제.
-7. [공유기설치](https://www.acmicpc.net/problem/2110)
-	- [풀이](https://github.com/guswns1659/Java-Algorithm/issues/1)
-	- 이진탐색 이용한 탐색 문제. 
-8. [나무자르기](https://www.acmicpc.net/problem/2805)
-    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/2)
-    - 이진탐색 이용한 탐색 문제.
-9. [숫자카드](https://www.acmicpc.net/problem/10815)
-    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/3)
-    - Collections.binarySearch() 이용하는 단순 문제
-10. [랜선자르기](https://www.acmicpc.net/problem/1654)
-    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/4)
-    - 이진탐색 이용.
-11. [전화번호 목록](https://programmers.co.kr/learn/courses/30/lessons/42577)
+6. [전화번호 목록](https://programmers.co.kr/learn/courses/30/lessons/42577)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/10)
-    - 해시 사용해서 중복일 경우 제거. 
-12. [트리 순회](https://www.acmicpc.net/problem/1991)
+7. [트리 순회](https://www.acmicpc.net/problem/1991)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/21)
-    - 트리 순회에 대한 개념 정립.
+8. [분해합](https://www.acmicpc.net/problem/2231)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/33)
+9. [한 줄로 서기](https://www.acmicpc.net/problem/1138)
+   	- [풀이]()
+   	- 모든 경우의 수를 계산해야 하는 문제
+    
 	
+</details>
+
+<details markdown="1">
+<summary>이진탐색</summary>
+
+1. [공유기설치](https://www.acmicpc.net/problem/2110)
+	- [풀이](https://github.com/guswns1659/Java-Algorithm/issues/1)
+2. [나무자르기](https://www.acmicpc.net/problem/2805)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/2)
+3. [숫자카드](https://www.acmicpc.net/problem/10815)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/3)
+4. [랜선자르기](https://www.acmicpc.net/problem/1654)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/4)
+
 </details>
 
 <details markdown="1">
@@ -228,6 +228,10 @@
 11. [적록색약](https://www.acmicpc.net/problem/10026)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/32)
     - 여러 시작점이 있고 시작점의 유형을 구분해야 하는 문제 
+12. [CrazyBot](https://arena.topcoder.com/#/u/practiceProblemList) 
+  	- [풀이](https://github.com/guswns1659/Java-Algorithm/commit/dabd86c2d42131b2af45e1ac87dc3104809af622)
+   	- DFS이용한 전체 탐색 문제.
+   	- 좌표 방향에 대한 이해가 오래걸렸던 문제.
 
 </details>
 
