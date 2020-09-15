@@ -117,7 +117,6 @@
 	- 답을 봤지만 이해가 더 필요.
 	- Comparable 구현할 때 오름차순일 경우, 값을 비교한 뒤 작으면 -1, 크면 +1. 
 	- 내림차순일 경우 값을 비교한 뒤 작으면 +1, 크면 -1.
- 
 14. [k번째수](https://programmers.co.kr/learn/courses/30/lessons/42748)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/15)
     - 기본 배열의 정렬을 이해한다면 풀 문제. 	
@@ -161,7 +160,8 @@
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/33)
 9. [한 줄로 서기](https://www.acmicpc.net/problem/1138)
    	- [풀이]()
-   	- 모든 경우의 수를 계산해야 하는 문제
+10. [덩치](https://www.acmicpc.net/problem/7568)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/34)
     
 	
 </details>
