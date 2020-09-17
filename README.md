@@ -162,7 +162,8 @@
    	- [풀이]()
 10. [덩치](https://www.acmicpc.net/problem/7568)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/34)
-    
+11. [영화감독 숌](https://www.acmicpc.net/problem/1436)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/38)
 	
 </details>
 
