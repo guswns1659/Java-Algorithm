@@ -123,6 +123,8 @@
 15. [가장 큰 수](https://programmers.co.kr/learn/courses/30/lessons/42748)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/16)
     - Comparator를 잘 활용해서 풀어야하는 문제. 자릿수 별로 비교해 정렬하는 문제
+16. [통계합](https://www.acmicpc.net/problem/2108)
+    - [풀이](https://github.com/guswns1659/JuraJura/issues/66)
 
 </details>
 
