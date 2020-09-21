@@ -46,6 +46,8 @@
     - 해시를 사용했지만 XOR를 이용하면 A, B, B 있을 때 A를 구하기가 쉽다. 
 8. [방 번호](https://www.acmicpc.net/problem/1475)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/40)
+9. [프린터 큐](https://www.acmicpc.net/problem/1966)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/41)
 
 </details>
 
