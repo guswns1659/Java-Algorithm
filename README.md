@@ -242,6 +242,9 @@
 13. [유기농배추](https://www.acmicpc.net/problem/1012)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/35)
     - 가로가 먼저 입력되니까 행과 열을 반대로 잘 처리해야하는 문제
+14. [연결 요소의 개수](https://www.acmicpc.net/problem/11724)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/42)
+    - 평범한 union-find 문제
 
 </details>
 
