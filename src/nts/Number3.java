@@ -8,23 +8,28 @@ public class Number3 {
     }
 
     public int solution(int[] histogram) {
-        int max = 0;
-        for (int i = 0; i < histogram.length; i++) {
-            for (int j = 0; j < histogram.length; j++) {
-                if (i >= j) continue;
-                if (i + 1 == j) continue;
-                if (histogram[i] >= histogram[j]) {
-                    int min = histogram[j];
-                    int value = (j - i - 1) * min;
-                    max = Math.max(max,value);
+        int min = 1;
+        int max = (histogram.length - 1);
+        int answer = 0;
+
+        while (max >= min) {
+            int mid = (max + min) / 2;
+
+            for (int index = 0; index < histogram.length; index++) {
+                int index2 = index + mid;
+                if (index2 >= histogram.length) break;
+                if (histogram[index] >= histogram[index2]) {
+                    int minArea = histogram[index2];
+                    int value = (index2 - index - 1) * minArea;
+                    max = Math.max(answer,value);
                 } else {
-                    int min = histogram[i];
-                    int value = (j - i - 1) * min;
-                    max = Math.max(max,value);
+                    int minArea = histogram[index];
+                    int value = (index2 - index - 1) * minArea;
+                    max = Math.max(answer,value);
                 }
             }
+            min = mid + 1;
         }
-
-        return max;
+        return answer;
     }
 }
