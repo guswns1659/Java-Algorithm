@@ -12,7 +12,7 @@ public class Number3 {
         System.out.println(number3.solution(new int[]{1})); // 0
         System.out.println(number3.solution(new int[]{4,3,2,1})); // 0
         System.out.println(number3.solution(new int[]{3,3,3})); // 3
-        System.out.println(number3.solution(new int[]{10,10,10})); // ?
+        System.out.println(number3.solution(new int[]{4,4})); //
     }
 
     public int solution(int[] A) {
@@ -32,17 +32,16 @@ public class Number3 {
                 count++;
 
             } else if (A[index - 1] > A[index]) {
-                while (A[index] - A[index - 1] != 1) {
-                    A[index] += 1;
-                    count++;
-                }
+                int want = A[index - 1] + 1;
+                int add = want - A[index];
+                count += add;
+                A[index] = want;
             } else {
-                while (A[index] - A[index - 1] > 1) {
-                    A[index] -= 1;
-                    count++;
-                }
+                int want = A[index - 1] + 1;
+                int sub = A[index] - want;
+                count += sub;
+                A[index] = want;
             }
-
         }
         return count > 1000000000 ? -1 : count;
     }
