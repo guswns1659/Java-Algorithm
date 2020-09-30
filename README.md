@@ -250,3 +250,10 @@
 
 </details>
 
+<details markdown="1">
+<summary>재귀</summary>
+
+1. [0 만들기](https://www.acmicpc.net/problem/7490)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/60)
+
+</details>
