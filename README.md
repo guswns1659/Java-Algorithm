@@ -48,6 +48,8 @@
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/40)
 9. [프린터 큐](https://www.acmicpc.net/problem/1966)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/41)
+10. [에라토스테네스의 체](https://www.acmicpc.net/problem/2960)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/59)
 
 </details>
 
