@@ -265,5 +265,7 @@
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/61)
 3. [트리](https://www.acmicpc.net/problem/1068)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/62)
+4. [상근이의 여행](https://www.acmicpc.net/problem/9372)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/64)
     
 </details>
