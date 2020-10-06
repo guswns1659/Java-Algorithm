@@ -162,8 +162,6 @@
 	- 문제 이해를 위해 그래프를 그려봄.
 6. [전화번호 목록](https://programmers.co.kr/learn/courses/30/lessons/42577)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/10)
-7. [트리 순회](https://www.acmicpc.net/problem/1991)
-    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/21)
 8. [분해합](https://www.acmicpc.net/problem/2231)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/33)
 9. [한 줄로 서기](https://www.acmicpc.net/problem/1138)
@@ -256,4 +254,16 @@
 1. [0 만들기](https://www.acmicpc.net/problem/7490)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/60)
 
+</details>
+
+<details markdown="1">
+<summary>트리</summary>
+
+1. [트리 순회](https://www.acmicpc.net/problem/1991)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/21)
+2. [트리의 부모 찾기](https://www.acmicpc.net/problem/11725)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/61)
+3. [트리](https://www.acmicpc.net/problem/1068)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/62)
+    
 </details>
