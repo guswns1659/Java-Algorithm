@@ -269,5 +269,8 @@
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/64)
 5. [이진검색트리](https://www.acmicpc.net/problem/5639)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/65)
+6. [문자열집합](https://www.acmicpc.net/problem/14425)   
+    - [풀이](https://www.acmicpc.net/problem/69)
+ 
     
 </details>
