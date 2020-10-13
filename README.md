@@ -271,6 +271,8 @@
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/65)
 6. [문자열집합](https://www.acmicpc.net/problem/14425)   
     - [풀이](https://www.acmicpc.net/problem/69)
+7. [나무 탈출](https://www.acmicpc.net/problem/15900)
+    - [풀이](https://www.acmicpc.net/problem/70)
  
     
 </details>
