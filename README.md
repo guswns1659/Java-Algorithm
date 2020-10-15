@@ -278,8 +278,11 @@
 
 <details markdown="1">
 <summary>그래프</summary>
+
 1. [가장 먼 노드](https://programmers.co.kr/learn/courses/30/lessons/49189)
     - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/71)
+2. [순위](https://programmers.co.kr/learn/courses/30/lessons/49191)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/72)
 
 </details>
 
