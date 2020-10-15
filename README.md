@@ -273,6 +273,13 @@
     - [풀이](https://www.acmicpc.net/problem/69)
 7. [나무 탈출](https://www.acmicpc.net/problem/15900)
     - [풀이](https://www.acmicpc.net/problem/70)
- 
     
 </details>
+
+<details markdown="1">
+<summary>그래프</summary>
+1. [가장 먼 노드](https://programmers.co.kr/learn/courses/30/lessons/49189)
+    - [풀이](https://github.com/guswns1659/Java-Algorithm/issues/71)
+
+</details>
+
