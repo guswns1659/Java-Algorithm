@@ -5,10 +5,9 @@ import java.io.*;
 
 public class N15900 {
 
-    private static Map<Integer, List<Integer>> tree = new HashMap<>();
+    private static List<List<Integer>> tree = new ArrayList<>();
     private static int[] depth;
     private static int[] parent;
-    private static List<Integer> leafIndex = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -16,9 +15,9 @@ public class N15900 {
         depth = new int[treeCount+1];
         parent = new int[treeCount+1];
 
-        // 트리 초기화
-        for (int num = 0; num < treeCount; num++ ) {
-            tree.put(num + 1, new ArrayList<>());
+        // 트리 초기화 : 인접리스트 이용
+        for (int num = 0; num <= treeCount; num++ ) {
+            tree.add(new ArrayList<>());
         }
         // 루트 노트 부모로 0 추가
         tree.get(1).add(0);
@@ -32,11 +31,7 @@ public class N15900 {
             tree.get(b).add(a);
         }
 
-        if (bfs(1) % 2 == 0) {
-            System.out.println("No");
-        } else {
-            System.out.println("Yes");
-        }
+        System.out.println((bfs(1) % 2 == 0) ? "No" : "Yes");
 
     }
     public static int bfs(int root) {
