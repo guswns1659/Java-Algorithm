@@ -5,67 +5,80 @@ import java.io.*;
 
 public class N1926 {
 
-    static int[] dx = new int[]{1, -1, 0, 0};
-    static int[] dy = new int[]{0, 0, 1, -1};
-    static int[][] map;
-    static boolean[][] visited;
-    static int N, M;
+    private static int[] dx = new int[]{1,-1,0,0};
+    private static int[] dy = new int[]{0,0,1,-1};
+    private static int[][] dist;
+    private static int N,M;
+
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String[] input = br.readLine().split(" ");
-        N = Integer.parseInt(input[0]);
-        M = Integer.parseInt(input[1]);
+        String[] NM = br.readLine().split(" ");
+        N = Integer.parseInt(NM[0]);
+        M = Integer.parseInt(NM[1]);
 
-        map = new int[N][M];
-        visited = new boolean[N][M];
+        // dist 생성 및 초기화
+        dist = new int[N][M];
 
-        int drawingCount = 0;
-        int maxArea = 0;
-
-        // map 초기화
-        for (int row = 0; row < N; row++) {
-            String[] oneRow = br.readLine().split(" ");
-            for (int column = 0; column < M; column++) {
-                map[row][column] = Integer.parseInt(oneRow[column]);
+        for (int r = 0; r < N; r++) {
+            String[] input = br.readLine().split(" ");
+            for (int c = 0; c < M; c++) {
+                String character = input[c];
+                if (!character.equals("0")) {
+                    dist[r][c] = -1;
+                }
             }
         }
 
-        for (int row = 0; row < N; row++) {
-            for (int column = 0; column < M; column++) {
-                // 1이 아니거나 이미 방문한 노드면 continue;
-                if (map[row][column] != 1 || visited[row][column]) continue;
-                maxArea = Math.max(dfs(row,column), maxArea);
-                drawingCount++;
+        // for문 돌며 bfs(), 돌 때 마다 count++;
+        // bfs()의 결과인 size와 max를 비교 
+        int count = 0;
+        int max = 0;
+        for (int r = 0; r < N; r++) {
+            for (int c = 0; c < M; c++) {
+                if (dist[r][c] == -1) {
+                    int size = bfs(r,c);
+                    count++;
+                    if (size > max) {
+                        max = size;
+                    }
+                }
             }
         }
 
-        System.out.println(drawingCount);
-        System.out.print(maxArea);
+        System.out.println(count);
+        System.out.println(max);
+
+
     }
 
-    public static int dfs(int row, int column) {
-
+    private static int bfs(int x, int y) {
+        int size = 0;
         Queue<int[]> q = new LinkedList<>();
-        visited[row][column] = true;
-        q.offer(new int[]{row, column});
-        int area = 0;
+        q.offer(new int[]{x,y});
+        dist[x][y] = 0;
 
-        while(!q.isEmpty()) {
-            int[] location = q.poll();
-            area++;
+        while (!q.isEmpty()) {
+            int[] current = q.poll();
+            size++;
+            int x2 = current[0];
+            int y2 = current[1];
 
-            for (int index = 0; index < 4; index++) {
-                int x2 = location[0] + dx[index];
-                int y2 = location[1] + dy[index];
+            for (int dir = 0; dir < 4; dir++) {
+                int x3 = x2 + dx[dir];
+                int y3 = y2 + dy[dir];
 
-                if (x2 < 0 || x2 >= N || y2 <0 || y2 >= M) continue;
-                if (map[x2][y2] != 1 || visited[x2][y2]) continue;
+                // 배열 벗어나는 조건
+                if (x3 < 0 || x3 >= N || y3 < 0 || y3 >= M) continue;
+                // 방문한 조건
+                if (dist[x3][y3] >= 0) continue;
+                dist[x3][y3] = dist[x2][y2] + 1;
+                q.offer(new int[]{x3,y3});
 
-                visited[x2][y2] = true;
-                q.offer(new int[]{x2, y2});
+
             }
         }
-        return area;
+        return size;
     }
+
 }
