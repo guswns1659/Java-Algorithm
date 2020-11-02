@@ -1,57 +1,58 @@
 package backjun.bfs;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
+import java.io.*;
 
 public class N2178 {
 
-    private static int[] dx = {1, -1, 0, 0};
-    private static int[] dy = {0, 0, 1, -1};
-    private static boolean[][] visited;
-    private static int[][] map;
-    private static int N,M;
+    private static int[] dx = new int[]{1, -1, 0, 0};
+    private static int[] dy = new int[]{0, 0, 1, -1};
+    private static int[][] dist;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String[] NM = br.readLine().split(" ");
-        N = Integer.parseInt(NM[0]);
-        M = Integer.parseInt(NM[1]);
+        int N = Integer.parseInt(NM[0]);
+        int M = Integer.parseInt(NM[1]);
 
-        map = new int[N][M];
-        visited = new boolean[N][M];
+        // dist 생성 및 초기화
+        dist = new int[N][M];
+//        Arrays.fill(dist, -1); // fill은 배열 한개에만 적용된다. 2차원 배열인 경우 반복문으로 해결
 
-        for (int row = 0; row < N; row++) {
-            String oneRow = br.readLine();
-            for (int column = 0; column < M; column++) {
-                map[row][column] = oneRow.charAt(column) - '0';
-            }
-        }
-        bfs(0,0);
-        System.out.println(map[N-1][M-1]);
-    }
-
-    private static void bfs(int x, int y) {
-        Queue<int[]> queue = new LinkedList<>();
-        visited[x][y] = true;
-        queue.offer(new int[]{x, y});
-
-        while (!queue.isEmpty()) {
-            int[] location = queue.poll();
-
-            for (int dir = 0; dir < 4; dir++) {
-                int x2 = location[0] + dx[dir];
-                int y2 = location[1] + dy[dir];
-                if (x2 >= 0 && y2 >= 0 && x2 < N && y2 < M) {
-                    if (map[x2][y2] != 0 && !visited[x2][y2]) {
-                        queue.offer(new int[]{x2, y2});
-                        visited[x2][y2] = true;
-                        map[x2][y2] = map[location[0]][location[1]] + 1;
-                    }
+        for (int r = 0; r < N; r++) {
+            String input = br.readLine();
+            for (int c = 0; c < M; c++) {
+                char character = input.charAt(c);
+                if (character != '0') {
+                    dist[r][c] = -1;
                 }
             }
         }
+
+        // bfs 
+        Queue<int[]> q = new LinkedList<>();
+        dist[0][0] = 1;
+        q.offer(new int[]{0,0});
+
+        while (!q.isEmpty()) {
+            int[] current = q.poll();
+            int x = current[0];
+            int y = current[1];
+
+            // 동서남북으로 이동
+            for (int dir = 0; dir < 4; dir++) {
+                int x2 = x + dx[dir];
+                int y2 = y + dy[dir];
+
+                // 배열을 벗어나면 continue;
+                if (x2 < 0 || x2 >= N || y2 < 0 || y2 >= M) continue;
+                // 방문한 노드라면 continue;
+                if (dist[x2][y2] >= 0) continue;
+                dist[x2][y2] = dist[x][y] + 1;
+                q.offer(new int[]{x2, y2});
+            }
+        }
+
+        System.out.println(dist[N-1][M-1]);
     }
 }
