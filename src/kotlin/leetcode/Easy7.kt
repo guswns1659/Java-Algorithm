@@ -1,51 +1,41 @@
 package leetcode
 
-import java.util.*
+// https://leetcode.com/problems/isomorphic-strings/
+class Solution {
+    fun isIsomorphic(s: String, t: String): Boolean {
+        if (s.length != t.length) return false
 
+        val mapA = LinkedHashMap<Char, Int>()
+        val mapB = LinkedHashMap<Char, Int>()
 
-fun main() {
-    print(isValid(s = "[]"))
-}
-
-// https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
-fun findDisappearedNumbers(nums: IntArray): List<Int> {
-    // 숫자의 존재를 표시하기 위해 nums 배열 자체를 사용
-    for (i in nums.indices) {
-        val index = kotlin.math.abs(nums[i]) - 1
-        if (nums[index] > 0) {
-            nums[index] = -nums[index] // 해당 인덱스에 있는 숫자를 음수로 변환
+        // s 문자열의 각 문자의 빈도를 LinkedHashMap에 저장
+        for (c in s) {
+            mapA[c] = mapA.getOrDefault(c, 0) + 1
         }
-    }
 
-    val result = mutableListOf<Int>()
-    // 음수로 변환되지 않은 인덱스는 해당 숫자가 없다는 것을 의미
-    for (i in nums.indices) {
-        if (nums[i] > 0) {
-            result.add(i + 1)
+        // t 문자열의 각 문자의 빈도를 LinkedHashMap에 저장
+        for (c2 in t) {
+            mapB[c2] = mapB.getOrDefault(c2, 0) + 1
         }
-    }
 
-    return result
-}
-
-// https://leetcode.com/problems/kth-largest-element-in-a-stream/
-// 힙이나 우선순위 큐 이용하는 알고리즘
-
-class KthLargest(val k: Int, nums: IntArray) {
-    private var pq: PriorityQueue<Int> = PriorityQueue()
-
-    init {
-        // nums 배열의 요소를 순회하면서 k개의 요소만 유지
-        nums.forEach { add(it) }
-    }
-
-    fun add(`val`: Int): Int {
-        pq.add(`val`)
-        if (pq.size > k) {
-            pq.poll()
-        }
-        return pq.peek()
+        // LinkedHashMap의 values()를 리스트로 변환하여 비교
+        return mapA.values.toList() == mapB.values.toList()
     }
 }
 
 
+// https://leetcode.com/problems/non-decreasing-array/
+class Solution2 {
+    fun checkPossibility(nums: IntArray): Boolean {
+        var count = 0
+
+        for (i in nums.indices) {
+            if (count > 1) return false
+            if (i < nums.size - 1 && nums[i] > nums[i+1]) { // outOfBound가 발생할 수 있음.
+                count++
+            }
+        }
+
+        return count == 1
+    }
+}
