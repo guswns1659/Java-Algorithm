@@ -39,3 +39,79 @@ class Solution2 {
         return count == 1
     }
 }
+
+// https://leetcode.com/problems/invert-binary-tree/
+// 내가 푼 큐
+/**
+ * Example:
+ * var ti = TreeNode(5)
+ * var v = ti.`val`
+ * Definition for a binary tree node.
+
+ */
+class TreeNode(var `val`: Int) {
+         var left: TreeNode? = null
+         var right: TreeNode? = null
+}
+
+class Solution3 {
+    fun invertTree(root: TreeNode?): TreeNode? {
+        if (root == null) return null
+
+        val q = mutableListOf<TreeNode?>()
+        q.add(root)
+
+        while (q.isNotEmpty()) {
+            val current = q.removeAt(0) // 큐에서 값을 제거
+            if (current != null) {
+                swap(current)
+                if (current.left != null) q.add(current.left)
+                if (current.right != null) q.add(current.right)
+            }
+        }
+
+        return root
+    }
+
+    private fun swap(current: TreeNode) {
+        val temp = current.left
+        current.left = current.right
+        current.right = temp
+    }
+}
+
+// gpt 재귀
+fun invertTree(root: TreeNode?): TreeNode? {
+    if (root == null) return null
+    val left = invertTree(root.left)
+    val right = invertTree(root.right)
+    root.left = right
+    root.right = left
+    return root
+}
+
+// https://leetcode.com/problems/count-primes/description/
+fun countPrimes(n: Int): Int {
+    // n이 2 이하인 경우 소수가 없으므로 바로 0을 반환
+    if (n <= 2) return 0
+
+    // 모든 숫자가 소수라고 가정하고 Boolean 배열을 true로 초기화
+    val isPrime = BooleanArray(n) { true }
+    isPrime[0] = false // 0은 소수가 아님
+    isPrime[1] = false // 1도 소수가 아님
+
+    // 2부터 n의 제곱근까지 탐색하면서 소수의 배수를 제거
+    for (i in 2 until Math.sqrt(n.toDouble()).toInt() + 1) {
+        // i가 소수인 경우에만 배수 제거 작업을 수행
+        if (isPrime[i]) {
+            // i의 배수들을 false로 설정하여 소수가 아님을 표시
+            // i * i부터 시작하는 이유는 그 이전 배수들은 이미 처리되었기 때문
+            for (j in i * i until n step i) {
+                isPrime[j] = false
+            }
+        }
+    }
+
+    // 남아있는 true 값들의 개수를 세어 소수의 개수를 반환
+    return isPrime.count { it }
+}
