@@ -115,3 +115,103 @@ fun countPrimes(n: Int): Int {
     // 남아있는 true 값들의 개수를 세어 소수의 개수를 반환
     return isPrime.count { it }
 }
+
+// https://leetcode.com/problems/longest-continuous-increasing-subsequence/
+class Solution5 {
+    fun findLengthOfLCIS(nums: IntArray): Int {
+        var largest = 1
+        var length = 1
+        for (i in nums.indices) {
+            if (i >= nums.size - 1) return largest
+
+            if (nums[i] < nums[i+1]) {
+                length += 1
+            } else {
+                if (largest < length) largest = length
+                else length = 1
+            }
+        }
+        return largest
+    }
+}
+
+class ListNode {
+    var next: ListNode? = null
+}
+
+// hashSet 방식
+class Solution4 {
+    fun hasCycle(head: ListNode?): Boolean {
+        val visitedNodes = mutableSetOf<ListNode>()
+
+        var current = head
+        while (current != null) {
+            if (visitedNodes.contains(current)) {
+                return true
+            }
+            visitedNodes.add(current)
+            current = current.next
+        }
+
+        return false
+    }
+}
+
+// https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
+/**
+ * Example:
+ * var ti = TreeNode(5)
+ * var v = ti.`val`
+ * Definition for a binary tree node.
+ * class TreeNode(var `val`: Int) {
+ *     var left: TreeNode? = null
+ *     var right: TreeNode? = null
+ * }
+ */
+class Solution6 {
+    fun sortedArrayToBST(nums: IntArray): TreeNode? {
+        return sortRecursive(nums, 0, nums.size - 1)
+    }
+
+    private fun sortRecursive(nums: IntArray, left: Int, right: Int): TreeNode? {
+        if (left > right) return null
+        val mid = left + (right - left) / 2
+
+        val node = TreeNode(nums[mid])
+        node.left = sortRecursive(nums, left, mid - 1)
+        node.right = sortRecursive(nums, mid + 1, right)
+
+        return node
+    }
+}
+
+// https://leetcode.com/problems/merge-two-binary-trees/
+/**
+ * Example:
+ * var ti = TreeNode(5)
+ * var v = ti.`val`
+ * Definition for a binary tree node.
+ * class TreeNode(var `val`: Int) {
+ *     var left: TreeNode? = null
+ *     var right: TreeNode? = null
+ * }
+ */
+class Solution7 {
+    fun mergeTrees(root1: TreeNode?, root2: TreeNode?): TreeNode? {
+        return mergeRecursive(root1, root2)
+    }
+
+    private fun mergeRecursive(left: TreeNode?, right: TreeNode?): TreeNode? {
+        if (left == null && right == null) return null
+
+        val value = (left?.`val` ?: 0) + (right?.`val` ?: 0)
+        val node = TreeNode(value)
+        node.left = mergeRecursive(left?.left, right?.left)
+        node.right = mergeRecursive(left?.right, right?.right)
+
+        return node
+    }
+}
+
+
+
