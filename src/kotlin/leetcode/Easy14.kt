@@ -63,5 +63,31 @@ class MinStack() {
  * var param_4 = obj.getMin()
  */
 
+// https://leetcode.com/problems/subtree-of-another-tree/
+/**
+ * Example:
+ * var ti = TreeNode(5)
+ * var v = ti.`val`
+ * Definition for a binary tree node.
+ * class TreeNode(var `val`: Int) {
+ *     var left: TreeNode? = null
+ *     var right: TreeNode? = null
+ * }
+ */
+class Solution8 {
+    fun isSubTree(root: TreeNode?, subRoot: TreeNode?): Boolean {
+        if (root == null) return false
+        if (isSameTree(root, subRoot)) return true
+        return isSubTree(root.left, subRoot) || isSubTree(root.right, subRoot)
+    }
+
+    fun isSameTree(s: TreeNode?, t: TreeNode?): Boolean {
+        if (s == null && t == null) return true
+        if (s == null || t == null) return false
+        if (s.`val` != t.`val`) return false
+        return isSameTree(s.left, t.left) && isSameTree(s.right, t.right)
+    }
+}
+
 
 
