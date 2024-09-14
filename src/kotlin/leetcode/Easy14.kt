@@ -89,5 +89,14 @@ class Solution8 {
     }
 }
 
+// https://leetcode.com/problems/reverse-words-in-a-string-iii/
+class Solution9 {
+    fun reverseWords(s: String): String {
+        return s.split(" ")
+            .map { it.reversed() }
+            .joinToString(" ")
+    }
+}
+
 
 
