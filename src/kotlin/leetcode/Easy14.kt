@@ -98,5 +98,37 @@ class Solution9 {
     }
 }
 
+// https://leetcode.com/problems/rotate-array/
+class Solution10 {
+    fun rotate(nums: IntArray, k: Int): Unit {
+        val size = nums.size
+
+        val newK = k % size // 다른 문제에서는 k가 size보다 클 수 있기 때문에
+        if (k == 0) return Unit
+
+        nums.reverse()
+        reverseSubarray(nums, 0, k-1)
+        reverseSubarray(nums, k, size-1)
+    }
+
+    fun reverseSubarray(nums: IntArray, start: Int, end: Int) {
+        var left = start
+        var right = end
+
+        while (left < right) {
+            // Swap elements at left and right indices
+            val temp = nums[left]
+            nums[left] = nums[right]
+            nums[right] = temp
+
+            // Move towards the center
+            left++
+            right--
+        }
+    }
+
+}
+
+
 
 
