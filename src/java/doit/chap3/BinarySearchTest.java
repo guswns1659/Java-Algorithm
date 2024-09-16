@@ -8,7 +8,5 @@ public class BinarySearchTest {
         int index = Arrays.binarySearch(ints, 10);
         System.out.println(index);
     }
-
-
 }
 
