@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm' version '2.0.20' // 사용 중인 Kotlin 버전에 맞게 변경
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/java'] // 기존 Java 소스 디렉토리
+        }
+        kotlin {
+            srcDirs = ['src/kotlin'] // Kotlin 소스 디렉토리
+        }
+    }
+}
