@@ -9,6 +9,14 @@ repositories {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation 'org.slf4j:slf4j-api:2.0.9' // Replace with the latest version
+    implementation 'org.slf4j:slf4j-simple:2.0.9' // Replace with the latest version if you need a simple logger implementation
+
+    testImplementation 'junit:junit:4.13.2' // Replace with the latest version
+    testImplementation 'org.junit.vintage:junit-vintage-engine:5.10.0' // junit5에서 4 돌리는 방법
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0' // Replace with the latest version
+    testImplementation 'org.assertj:assertj-core:3.24.2' // Replace with the latest version
 }
 
 sourceSets {
