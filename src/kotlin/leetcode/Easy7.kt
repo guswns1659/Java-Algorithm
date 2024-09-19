@@ -1,5 +1,7 @@
 package leetcode
 
+import java.util.*
+
 
 fun main() {
     print(isValid(s = "[]"))
@@ -25,3 +27,25 @@ fun findDisappearedNumbers(nums: IntArray): List<Int> {
 
     return result
 }
+
+// https://leetcode.com/problems/kth-largest-element-in-a-stream/
+// 힙이나 우선순위 큐 이용하는 알고리즘
+
+class KthLargest(val k: Int, nums: IntArray) {
+    private var pq: PriorityQueue<Int> = PriorityQueue()
+
+    init {
+        // nums 배열의 요소를 순회하면서 k개의 요소만 유지
+        nums.forEach { add(it) }
+    }
+
+    fun add(`val`: Int): Int {
+        pq.add(`val`)
+        if (pq.size > k) {
+            pq.poll()
+        }
+        return pq.peek()
+    }
+}
+
+
