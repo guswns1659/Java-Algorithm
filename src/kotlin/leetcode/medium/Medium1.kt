@@ -75,3 +75,61 @@ class Solution1 {
         return -1
     }
 }
+
+// https://leetcode.com/problems/number-of-islands/
+class Solution2 {
+    fun numIslands(grid: Array<CharArray>): Int {
+        if (grid.isEmpty()) return 0
+
+        val rows = grid.size
+        val cols = grid[0].size
+        var count = 0
+
+        fun dfs(r: Int, c: Int) {
+            if (r < 0 || c < 0 || r >= rows || c >= cols || grid[r][c] == '0') return
+            grid[r][c] = '0'  // Mark the cell as visited
+            dfs(r + 1, c)  // Explore down
+            dfs(r - 1, c)  // Explore up
+            dfs(r, c + 1)  // Explore right
+            dfs(r, c - 1)  // Explore left
+        }
+
+        for (r in 0 until rows) {
+            for (c in 0 until cols) {
+                if (grid[r][c] == '1') {
+                    count++
+                    dfs(r, c)  // Start a DFS to mark the entire island
+                }
+            }
+        }
+
+        return count
+    }
+}
+
+// https://leetcode.com/problems/merge-intervals/
+fun merge(intervals: Array<IntArray>): Array<IntArray> {
+    if (intervals.isEmpty()) return emptyArray()
+
+    // Step 1: Sort intervals by their start times
+    intervals.sortBy { it[0] }
+
+    // Step 2: Initialize a list to store the merged intervals
+    val merged = mutableListOf<IntArray>()
+
+    // Step 3: Iterate through the intervals
+    for (interval in intervals) {
+        // If merged list is empty or current interval does not overlap with the last one
+        if (merged.isEmpty() || merged.last()[1] < interval[0]) {
+            // Add the current interval to the merged list
+            merged.add(interval)
+        } else {
+            // There is an overlap, merge the intervals by updating the end time
+            merged.last()[1] = maxOf(merged.last()[1], interval[1])
+        }
+    }
+
+    // Step 4: Convert the result back to an array and return
+    return merged.toTypedArray()
+}
+
