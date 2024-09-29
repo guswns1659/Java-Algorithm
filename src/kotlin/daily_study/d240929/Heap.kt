@@ -1,4 +1,4 @@
-package daily_study
+package daily_study.d240929
 
 class Heap(private val isMinHeap: Boolean = true) {
     private val list = mutableListOf<Int>()
