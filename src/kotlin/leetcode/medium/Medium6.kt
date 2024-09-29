@@ -84,3 +84,42 @@ class Solution1 {
         return result.toString()
     }
 }
+
+// https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/?envType=problem-list-v2&envId=xixy4dq7
+class Solution3 {
+    fun letterCombinations(digits: String): List<String> {
+        if (digits.isEmpty()) return emptyList()
+
+        // 숫자에 매핑된 문자들
+        val digitToChar = mapOf(
+            '2' to "abc", '3' to "def", '4' to "ghi",
+            '5' to "jkl", '6' to "mno", '7' to "pqrs",
+            '8' to "tuv", '9' to "wxyz"
+        )
+
+        val result = mutableListOf<String>()
+
+        // 재귀 함수
+        fun backtrack(combination: StringBuilder, nextIndex: Int) {
+            // 모두 탐색해서 조합을 완료했을 때
+            if (nextIndex == digits.length) {
+                result.add(combination.toString())
+                return
+            }
+
+            // 다음 숫자에 매핑된 문자들 가져오기
+            val letters = digitToChar[digits[nextIndex]]!!
+            for (letter in letters) {
+                // 문자 추가하고 재귀 호출
+                combination.append(letter)
+                backtrack(combination, nextIndex + 1)
+                // 다시 돌아와서 문자 제거
+                combination.deleteCharAt(combination.length - 1)
+            }
+        }
+
+        backtrack(StringBuilder(), 0) // 초기 값으로 빈 문자열과 첫 번째 인덱스
+        return result
+    }
+
+}
