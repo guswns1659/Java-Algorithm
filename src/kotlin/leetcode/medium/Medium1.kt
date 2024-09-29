@@ -1,7 +1,9 @@
 package leetcode.medium
 
+import java.util.*
+
 // https://leetcode.com/problems/course-schedule/description/
-class Solution {
+class Solution0 {
     fun canFinish(numCourses: Int, prerequisites: Array<IntArray>): Boolean {
         val adj = Array(numCourses) { mutableListOf<Int>() }
         val color = IntArray(numCourses) { WHITE }
@@ -133,3 +135,61 @@ fun merge(intervals: Array<IntArray>): Array<IntArray> {
     return merged.toTypedArray()
 }
 
+// https://leetcode.com/problems/binary-tree-level-order-traversal/?envType=problem-list-v2&envId=xixy4dq7
+/**
+ * Example:
+ * var ti = TreeNode(5)
+ * var v = ti.`val`
+ * Definition for a binary tree node.
+ * class TreeNode(var `val`: Int) {
+ *     var left: TreeNode? = null
+ *     var right: TreeNode? = null
+ * }
+ */
+
+class TreeNode(var `val`: Int) {
+         var left: TreeNode? = null
+         var right: TreeNode? = null
+}
+
+class Solution {
+    fun levelOrder(root: TreeNode?): List<List<Int>> {
+        val result = mutableListOf<List<Int>>()
+        var list = mutableListOf<Int>()
+        if (root == null) {
+            return result
+        }
+
+        // current level
+        var cl = 0
+
+        val q = LinkedList<Pair<TreeNode, Int>>()
+        q.add(root to cl)
+
+        while (q.isNotEmpty()) {
+            val pair = q.poll()
+            val now = pair.first
+            val newCl = pair.second + 1
+
+            if (cl == pair.second) {
+                list.add(pair.first.`val`)
+            } else {
+                result.add(list)
+                list = mutableListOf() // clear()하면 result에 들어간 list 초기화..
+                cl++
+                list.add(pair.first.`val`)
+            }
+
+            pair.first.left?.let {
+                q.add(it to newCl)
+            }
+            pair.first.right?.let {
+                q.add(it to newCl)
+            }
+        }
+
+        result.add(list)  // 마지막 레벨의 리스트 추가
+
+        return result
+    }
+}
