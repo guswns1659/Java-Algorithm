@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/?envType=problem-list-v2&envId=xixy4dq7
 /**
  * Definition for a binary tree node.
  * class TreeNode(var `val`: Int = 0) {
@@ -121,5 +122,48 @@ class Solution3 {
         backtrack(StringBuilder(), 0) // 초기 값으로 빈 문자열과 첫 번째 인덱스
         return result
     }
+}
 
+// https://leetcode.com/problems/longest-palindromic-substring/description/
+class Solution4 {
+    fun longestPalindrome(s: String): String {
+        /*
+        - setting start, end
+        - 각 인덱스를 순회하면서 짝수, 홀수 palindrom을 계산한다.
+            - 중심에서 왼쪽, 오른쪽 인덱스를 늘려가며 동일한지 while문으로 확인
+        - 만약 계산한 len가 현재 start, end보다 길면 start, end를 해당 문자로 업데이트
+        -
+         */
+
+        if (s.isEmpty()) return ""
+        var start = 0 // 현재 가장 긴 팰린드롬의 시작 인덱스
+        var end = 0 // 현재 가장 긴 팰린드롬의 끝 인덱스
+
+        for (i in s.indices) {
+            val len1 = expandAroundCenter(s, i, i) // 홀수 길이 팰린드롬 검사
+            val len2 = expandAroundCenter(s, i, i+1) // 짝수 길이 팰린드롬 검사
+            val len = maxOf(len1, len2)
+
+            // 더 긴 팰린드롬을 찾으면 start와 end 업데이트
+            if (len > end - start) {
+                start = i - (len - 1) / 2 // 현재 팰런드롬의 중심은 i 이기 때문에 팰런드롬의 start 인덱스를 구하기 위함
+                end = i + len / 2
+            }
+        }
+        return s.substring(start, end + 1)
+
+    }
+
+    private fun expandAroundCenter(s: String, start: Int, end: Int): Int {
+        var l = start
+        var r = end
+
+        // 양쪽으로 확장하며 팰린드롬인지 확인
+        while(l >= 0 && r < s.length && s[l] == s[r]) {
+            l--
+            r++
+        }
+
+        return r - l - 1 // 리턴될 때는 이미 한번 벗어난 상태라 -1을 해준다.
+    }
 }
