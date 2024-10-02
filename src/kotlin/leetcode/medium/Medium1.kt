@@ -81,26 +81,28 @@ class Solution1 {
 // https://leetcode.com/problems/number-of-islands/
 class Solution2 {
     fun numIslands(grid: Array<CharArray>): Int {
-        if (grid.isEmpty()) return 0
+        if (grid.isEmpty()) return 0 // omit
 
-        val rows = grid.size
-        val cols = grid[0].size
+        val row = grid.size
+        val column = grid[0].size
         var count = 0
 
         fun dfs(r: Int, c: Int) {
-            if (r < 0 || c < 0 || r >= rows || c >= cols || grid[r][c] == '0') return
-            grid[r][c] = '0'  // Mark the cell as visited
-            dfs(r + 1, c)  // Explore down
-            dfs(r - 1, c)  // Explore up
-            dfs(r, c + 1)  // Explore right
-            dfs(r, c - 1)  // Explore left
+            if (r < 0 || c < 0 || r >= row || c >= column || grid[r][c]=='0') { // 벗어나는 경우를 빼먹음
+                return
+            }
+            grid[r][c] = '0';
+            dfs(r+1, c)
+            dfs(r-1, c)
+            dfs(r, c+1)
+            dfs(r, c-1)
         }
 
-        for (r in 0 until rows) {
-            for (c in 0 until cols) {
+        for (r in grid.indices) {
+            for (c in grid[r].indices) {
                 if (grid[r][c] == '1') {
                     count++
-                    dfs(r, c)  // Start a DFS to mark the entire island
+                    dfs(r, c)
                 }
             }
         }
