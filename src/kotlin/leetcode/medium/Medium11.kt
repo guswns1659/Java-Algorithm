@@ -21,3 +21,25 @@ fun inorderTraversal(root: TreeNode?): List<Int> {
 
     return result
 }
+
+// https://leetcode.com/problems/group-anagrams/description/
+fun groupAnagrams(strs: Array<String>): List<List<String>> {
+    val map = mutableMapOf<List<Int>, MutableList<String>>()
+
+    for (str in strs) {
+        val arr = IntArray(26)
+        for (c in str) {
+            arr[c - 'a']++
+        }
+
+        val list = map.getOrDefault(arr.toList(), mutableListOf())
+        list.add(str)
+        map[arr.toList()] = list
+    }
+
+    return map.values.toList()
+}
+
+fun main() {
+    print(groupAnagrams(arrayOf("ddddddddddg","dgggggggggg")))
+}
