@@ -43,3 +43,12 @@ fun groupAnagrams(strs: Array<String>): List<List<String>> {
 fun main() {
     print(groupAnagrams(arrayOf("ddddddddddg","dgggggggggg")))
 }
+
+// https://leetcode.com/problems/largest-number/
+fun largestNumber(nums: IntArray): String {
+    val stringList = nums.map { it.toString() }.toList()
+
+    val result = stringList.sortedWith { a, b -> (b + a).compareTo(a + b) }.joinToString("")
+
+    return if (result[0] == '0') "0" else result
+}
