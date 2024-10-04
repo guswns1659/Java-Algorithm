@@ -40,9 +40,6 @@ fun groupAnagrams(strs: Array<String>): List<List<String>> {
     return map.values.toList()
 }
 
-fun main() {
-    print(groupAnagrams(arrayOf("ddddddddddg","dgggggggggg")))
-}
 
 // https://leetcode.com/problems/largest-number/
 fun largestNumber(nums: IntArray): String {
@@ -52,3 +49,39 @@ fun largestNumber(nums: IntArray): String {
 
     return if (result[0] == '0') "0" else result
 }
+
+// https://leetcode.com/problems/permutations/
+fun permute(nums: IntArray): List<List<Int>> {
+    val result = mutableListOf<MutableList<Int>>()
+    var current = mutableListOf<Int>()
+    val visited = BooleanArray(nums.size) { false }
+
+    fun backtracking() {
+        if (current.size == nums.size) {
+            result.add(current.toMutableList()) // note : 복사해서 넣어야함. 참조를 끊지 않으면 값이 바뀔 수 있음
+            return
+        }
+
+        for (i in nums.indices) {
+            if (!visited[i]) {
+                current.add(nums[i])
+                visited[i] = true
+                backtracking()
+                visited[i] = false // note : 방문을 안했다는 표시를 다시 해줘야함.
+                current.removeAt(current.size - 1)
+            }
+        }
+    }
+
+    backtracking()
+    return result
+}
+
+fun main() {
+//    print(groupAnagrams(arrayOf("ddddddddddg","dgggggggggg")))
+    print(permute(intArrayOf(1,2,3)))
+}
+
+
+
+
