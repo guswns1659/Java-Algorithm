@@ -77,11 +77,28 @@ fun permute(nums: IntArray): List<List<Int>> {
     return result
 }
 
-fun main() {
-//    print(groupAnagrams(arrayOf("ddddddddddg","dgggggggggg")))
-    print(permute(intArrayOf(1,2,3)))
+/**
+ * Example:
+ * var li = ListNode(5)
+ * var v = li.`val`
+ * Definition for singly-linked list.
+ * class ListNode(var `val`: Int) {
+ *     var next: ListNode? = null
+ * }
+ */
+class ListNode(var `val`: Int) {
+    var next: ListNode? = null
 }
 
+// https://leetcode.com/problems/swap-nodes-in-pairs/submissions/1412429381/
+fun swapPairs(head: ListNode?): ListNode? {
+    if (head?.next == null) return head
 
+    var first = head
+    var second = head.next
 
+    first.next = swapPairs(second?.next) // 가장 맨 뒤에 있는 쌍을 먼저 처리하게 되어 prev 고민이 줄어듦
+    second?.next = first
 
+    return second
+}
