@@ -102,3 +102,26 @@ fun swapPairs(head: ListNode?): ListNode? {
 
     return second
 }
+
+// https://leetcode.com/problems/generate-parentheses/description/
+fun generateParenthesis(n: Int): List<String> {
+    val result = mutableListOf<String>()
+    backTrack(result, "", 0, 0, n)
+    return result
+}
+
+fun backTrack(r: MutableList<String>, cur: String, open: Int, close: Int, max: Int) {
+    if (cur.length == max * 2) { // 종료 조건 적절하게 셋팅
+        r.add(cur)
+        return
+    }
+
+    if (open < max) {
+        backTrack(r, cur + "(", open+1, close, max)
+    }
+
+    if (close < open) {
+        backTrack(r, cur + ")", open, close+1, max)
+    }
+}
+
