@@ -32,13 +32,13 @@ class Solution2 {
         var count = 0
 
         for (i in 0 until nums.size - 1) {
-            if (nums[i] > nums[i+1]) {
+            if (nums[i] > nums[i + 1]) {
                 if (count > 0) return false
                 count++
-                if (i == 0 || nums[i-1] <= nums[i+1]) { // i - 1의 값이 i + 1 보다 작거나 같으면 i를 i+1 값으로 변경해야 유리
-                    nums[i] = nums[i+1]
+                if (i == 0 || nums[i - 1] <= nums[i + 1]) { // i - 1의 값이 i + 1 보다 작거나 같으면 i를 i+1 값으로 변경해야 유리
+                    nums[i] = nums[i + 1]
                 } else {
-                    nums[i+1] = nums[i]
+                    nums[i + 1] = nums[i]
                 }
             }
         }
@@ -57,8 +57,8 @@ class Solution2 {
 
  */
 class TreeNode(var `val`: Int) {
-         var left: TreeNode? = null
-         var right: TreeNode? = null
+    var left: TreeNode? = null
+    var right: TreeNode? = null
 }
 
 class Solution3 {
@@ -124,22 +124,25 @@ fun countPrimes(n: Int): Int {
 }
 
 // https://leetcode.com/problems/longest-continuous-increasing-subsequence/
-class Solution5 {
-    fun findLengthOfLCIS(nums: IntArray): Int {
-        var largest = 1
-        var length = 1
-        for (i in nums.indices) {
-            if (i >= nums.size - 1) return largest
+fun findLengthOfLCIS(nums: IntArray): Int {
+    if (nums.size == 1) return 1
+    var largest = 1
+    var length = 1
 
-            if (nums[i] < nums[i+1]) {
-                length += 1
-            } else {
-                if (largest < length) largest = length
-                else length = 1
-            }
+    for (i in 0 until nums.lastIndex) {
+        if (nums[i] < nums[i + 1]) {
+            length++
+        } else {
+            largest = maxOf(length, largest)
+            length = 1
         }
-        return largest
     }
+
+    return maxOf(largest, length) // note : 쭉 연속된 배열의 경우 else를 한번도 안들어가기 때문에 마지막에 처리
+}
+
+fun main() {
+    print(findLengthOfLCIS(intArrayOf(1, 3, 5, 4, 7)))
 }
 
 class ListNode {
