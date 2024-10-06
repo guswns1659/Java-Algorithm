@@ -48,4 +48,32 @@ class KthLargest(val k: Int, nums: IntArray) {
     }
 }
 
+// https://leetcode.com/problems/find-words-that-can-be-formed-by-characters/description/
+fun countCharacters(words: Array<String>, chars: String): Int {
+    val map = IntArray(26) // note : map이 아니라 배열을 이용해 빈도 카운팅을 한다.
+    for (c in chars) {
+        map[c - 'a'] += 1
+    }
+
+    var answer = 0
+
+    for (w in words) {
+        val copied = map.copyOf() // note : 얕은 복사를 진행함.
+        var flag = true
+        for (c in w) {
+            val count = copied[c - 'a']
+            if (count == 0) {
+                flag = flag.not()
+                break; // note : break는 for문을 끝내는 명령어
+            }
+            copied[c -'a'] = count - 1
+        }
+        if (flag) {
+            answer += w.length
+        }
+    }
+
+    return answer
+}
+
 
