@@ -5,21 +5,23 @@ class Solution {
     fun isIsomorphic(s: String, t: String): Boolean {
         if (s.length != t.length) return false
 
-        val mapA = LinkedHashMap<Char, Int>()
-        val mapB = LinkedHashMap<Char, Int>()
+        val map1 = mutableMapOf<Char, Char>()
+        val map2 = mutableMapOf<Char, Char>()
 
-        // s 문자열의 각 문자의 빈도를 LinkedHashMap에 저장
-        for (c in s) {
-            mapA[c] = mapA.getOrDefault(c, 0) + 1
+        for (i in s.indices) {
+            val c1 = s[i]
+            val c2 = t[i]
+
+            if (map1[c1] == null && map2[c2] == null) {
+                map1[c1] = c2
+                map2[c2] = c1
+            } else {
+                if (map1[c1] != c2 || map2[c2] != c1) {
+                    return false
+                }
+            }
         }
-
-        // t 문자열의 각 문자의 빈도를 LinkedHashMap에 저장
-        for (c2 in t) {
-            mapB[c2] = mapB.getOrDefault(c2, 0) + 1
-        }
-
-        // LinkedHashMap의 values()를 리스트로 변환하여 비교
-        return mapA.values.toList() == mapB.values.toList()
+        return true
     }
 }
 
@@ -29,14 +31,19 @@ class Solution2 {
     fun checkPossibility(nums: IntArray): Boolean {
         var count = 0
 
-        for (i in nums.indices) {
-            if (count > 1) return false
-            if (i < nums.size - 1 && nums[i] > nums[i+1]) { // outOfBound가 발생할 수 있음.
+        for (i in 0 until nums.size - 1) {
+            if (nums[i] > nums[i+1]) {
+                if (count > 0) return false
                 count++
+                if (i == 0 || nums[i-1] <= nums[i+1]) { // i - 1의 값이 i + 1 보다 작거나 같으면 i를 i+1 값으로 변경해야 유리
+                    nums[i] = nums[i+1]
+                } else {
+                    nums[i+1] = nums[i]
+                }
             }
         }
 
-        return count == 1
+        return true
     }
 }
 
