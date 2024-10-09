@@ -34,7 +34,30 @@ fun topKFrequent(nums: IntArray, k: Int): IntArray {
     return pq.map { it.key }.toIntArray()  // Collect the result.
 }
 
+// https://leetcode.com/problems/evaluate-reverse-polish-notation/
+fun evalRPN(tokens: Array<String>): Int {
+    val st = mutableListOf<Int>()
+    val ops = listOf("+", "-", "/", "*")
+    for (t in tokens) {
+        if (t !in ops) {
+            st.add(t.toInt())
+            continue;
+        }
+        val two = st.removeAt(st.size - 1)
+        val one = st.removeAt(st.size - 1)
+        val r:Int = when(t) {
+            "+" -> one + two
+            "-" -> one - two
+            "/" -> one / two
+            "*" -> one * two
+            else -> 0
+        }
+        st.add(r)
+    }
+    return st[0]
+}
+
 
 fun main() {
-    print(topKFrequent(intArrayOf(1,1,1,2,2,3), 2).toList())
+    print(evalRPN(arrayOf("4","13","5","/","+")))
 }
