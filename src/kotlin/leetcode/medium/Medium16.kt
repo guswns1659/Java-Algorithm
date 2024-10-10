@@ -57,6 +57,19 @@ fun evalRPN(tokens: Array<String>): Int {
     return st[0]
 }
 
+// https://leetcode.com/problems/longest-increasing-subsequence/
+fun lengthOfLIS(nums: IntArray): Int {
+    val dp = IntArray(nums.size) { 1 }
+    for (i in 1 until nums.size) {
+        for (j in 0 until i) {
+            if (nums[i] > nums[j]) {
+                dp[i] = maxOf(dp[i], dp[j]+1)
+            }
+        }
+    }
+    return dp.maxOrNull() ?: 1
+}
+
 
 fun main() {
     print(evalRPN(arrayOf("4","13","5","/","+")))
