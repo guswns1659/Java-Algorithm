@@ -71,7 +71,7 @@ fun lengthOfLIS(nums: IntArray): Int {
 }
 
 // https://leetcode.com/problems/counting-bits/description/
-fun countBits(n: Int): IntArray {
+fun myCountBits(n: Int): IntArray {
     val result = IntArray(n+1)
     for (i in 0 until n + 1) {
         if (i == 1) {
@@ -91,6 +91,24 @@ fun countBits(n: Int): IntArray {
     }
     return result
 }
+
+fun countBits2(n: Int): IntArray {
+    val result = IntArray(n + 1)
+    for (i in 0..n) {
+        result[i] = Integer.toBinaryString(i).count { it == '1' }
+    }
+    return result
+}
+
+fun countBits(n: Int): IntArray {
+    val dp = IntArray(n + 1)
+    for (i in 1..n) {
+        dp[i] = dp[i shr 1] + (i and 1)
+    }
+
+    return dp
+}
+
 
 
 fun main() {
