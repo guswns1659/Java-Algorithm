@@ -70,7 +70,30 @@ fun lengthOfLIS(nums: IntArray): Int {
     return dp.maxOrNull() ?: 1
 }
 
+// https://leetcode.com/problems/counting-bits/description/
+fun countBits(n: Int): IntArray {
+    val result = IntArray(n+1)
+    for (i in 0 until n + 1) {
+        if (i == 1) {
+            result[i] = 1
+            continue
+        }
+        val b = StringBuilder()
+        var num = i
+        while(num > 1) {
+            val r = num % 2
+            b.insert(0, r)
+            num /= 2
+        }
+        b.insert(0, num)
+        result[i] = b.count { it == '1' }
+        b.clear()
+    }
+    return result
+}
+
 
 fun main() {
-    print(evalRPN(arrayOf("4","13","5","/","+")))
+    // [0,1,1,2,1,2]
+    print(countBits(5).toList())
 }
