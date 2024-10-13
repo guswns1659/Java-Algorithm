@@ -33,3 +33,21 @@ class Solution {
     }
 }
 
+// https://leetcode.com/problems/longest-increasing-subsequence/description/
+fun lis(nums: IntArray): Int {
+    val dp = IntArray(nums.size) { 1 }
+
+    for (i in 1 until nums.size) {
+        for (j in 0 until i) {
+            if (nums[i] > nums[j]) {
+                dp[i] = maxOf(dp[i], dp[j]+1)
+            }
+        }
+    }
+    return dp.maxOrNull() ?: 1
+}
+
+fun main() {
+    print(lis(intArrayOf(0, 1, 0, 3, 2, 3)))
+}
+
