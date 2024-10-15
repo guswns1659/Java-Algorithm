@@ -47,7 +47,29 @@ fun lis(nums: IntArray): Int {
     return dp.maxOrNull() ?: 1
 }
 
+// https://leetcode.com/problems/generate-parentheses/
+fun generateParenthesis(n: Int): List<String> {
+    val list = mutableListOf<String>()
+    b(n, 0, 0, "", list)
+    return list.toList()
+}
+
+fun b(n: Int, o: Int, c: Int, cur: String, list: MutableList<String>) {
+    if (cur.length == n * 2) {
+        list.add(cur)
+        return
+    }
+
+    if (o < n) {
+        b(n, o+1, c, cur + "(", list)
+    }
+    if (c < o) {
+        b(n, o, c+1, cur + ")", list)
+    }
+}
+
+
 fun main() {
-    print(lis(intArrayOf(0, 1, 0, 3, 2, 3)))
+    print(generateParenthesis(3))
 }
 
