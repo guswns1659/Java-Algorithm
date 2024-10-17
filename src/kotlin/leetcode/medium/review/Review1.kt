@@ -96,6 +96,39 @@ fun search(nums: IntArray, target: Int): Int {
     return -1
 }
 
+// letter
+fun letterCombinations(digits: String): List<String> {
+    if (digits.isEmpty()) return emptyList()
+
+    // 숫자에 매핑된 문자들
+    val digitToChar = mapOf(
+        '2' to "abc", '3' to "def", '4' to "ghi",
+        '5' to "jkl", '6' to "mno", '7' to "pqrs",
+        '8' to "tuv", '9' to "wxyz"
+    )
+
+    val result = mutableListOf<String>()
+
+    fun b(com: StringBuilder, nI: Int) {
+        if (nI == digits.length) {
+            result.add(com.toString())
+            return
+        }
+
+        val ls = digitToChar[digits[nI]]!!
+        for (l in ls) {
+            com.append(l)
+            b(com, nI + 1)
+            com.deleteCharAt(com.length - 1)
+        }
+    }
+
+    b(StringBuilder(), 0)
+
+    return result
+}
+
+
 
 fun main() {
     print(generateParenthesis(3))
