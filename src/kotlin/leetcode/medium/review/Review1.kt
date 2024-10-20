@@ -96,7 +96,7 @@ fun search(nums: IntArray, target: Int): Int {
     return -1
 }
 
-// letter
+// https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 fun letterCombinations(digits: String): List<String> {
     if (digits.isEmpty()) return emptyList()
 
