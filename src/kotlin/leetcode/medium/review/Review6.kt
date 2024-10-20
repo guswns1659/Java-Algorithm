@@ -29,6 +29,39 @@ fun permute(nums: IntArray): List<List<Int>> {
     return result
 }
 
+// https://leetcode.com/problems/course-schedule/description/
+fun canFinish(numCourses: Int, prerequisites: Array<IntArray>): Boolean {
+    val adj = Array(numCourses) { mutableListOf<Int>() }
+    val colors = IntArray(numCourses) { 0 }
+
+    for (pre in prerequisites) {
+        adj[pre[1]].add(pre[0])
+    }
+
+    for (i in 0 until numCourses) {
+        if (colors[i] == 0 && hasCycle(adj, i, colors)) {
+            return false
+        }
+    }
+
+    return true
+}
+
+fun hasCycle(adj: Array<MutableList<Int>>, node: Int, colors: IntArray): Boolean {
+    colors[node] = 1
+    for (neighbor in adj[node]) {
+        if (colors[neighbor] == 1) {
+            return true
+        }
+        if (colors[neighbor] == 0 && hasCycle(adj, neighbor, colors)) {
+            return true
+        }
+    }
+    colors[node] = 2
+    return false
+}
+
 fun main() {
-    print(permute(intArrayOf(1,2,3)))
+    print(canFinish(2, arrayOf(intArrayOf(1,0), intArrayOf(0,1))))
+    print(canFinish(2, arrayOf(intArrayOf(1,0))))
 }
