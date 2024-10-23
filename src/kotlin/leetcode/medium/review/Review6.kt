@@ -1,5 +1,7 @@
 package leetcode.medium.review
 
+import java.util.*
+
 
 // https://leetcode.com/problems/permutations/
 fun permute(nums: IntArray): List<List<Int>> {
@@ -93,8 +95,21 @@ fun hasCycle2(adj: Array<MutableList<Int>>, node: Int, colors: IntArray): Boolea
     return false
 }
 
+// https://leetcode.com/problems/top-k-frequent-elements/description/
+fun topKFrequent(nums: IntArray, k: Int): IntArray {
+    val map = nums.toList().groupingBy { it }.eachCount()
+    val pq = PriorityQueue<Map.Entry<Int, Int>> ( compareBy {it.value} )
+
+    for (i in map) {
+        pq.add(i)
+        if (pq.size > k) pq.poll()
+    }
+
+    return pq.map { it.key }.toIntArray()
+}
+
 
 fun main() {
-    print(canFinish(2, arrayOf(intArrayOf(1,0), intArrayOf(0,1))))
-    print(canFinish(2, arrayOf(intArrayOf(1,0))))
+    println(topKFrequent(intArrayOf(1,1,1,2,2,3), 2).forEach {println(it)})
+    println(topKFrequent(intArrayOf(1), 1).forEach {println(it)})
 }
