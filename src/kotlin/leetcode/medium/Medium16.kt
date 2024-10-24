@@ -6,7 +6,8 @@ import java.util.*
 fun buildTree(inorder: IntArray, postorder: IntArray): TreeNode? {
     if (inorder.isEmpty()) return null
 
-    return findRoot(inorder, postorder)
+    val root = findRoot(inorder, postorder)
+    return root
 }
 
 fun findRoot(inorder: IntArray, postorder: IntArray): TreeNode? {
@@ -16,10 +17,11 @@ fun findRoot(inorder: IntArray, postorder: IntArray): TreeNode? {
     val rootIndex = inorder.indexOf(root)
     val node = TreeNode(root)
     node.left = findRoot(inorder.sliceArray(0 until rootIndex), postorder.sliceArray(0 until rootIndex))
-    node.right = findRoot(postorder.sliceArray(rootIndex+1 until inorder.size), postorder.sliceArray(rootIndex until postorder.lastIndex ))
+    node.right = findRoot(inorder.sliceArray(rootIndex+1 until inorder.size), postorder.sliceArray(rootIndex until postorder.lastIndex ))
 
     return node
 }
+
 
 // https://leetcode.com/problems/top-k-frequent-elements/
 fun topKFrequent(nums: IntArray, k: Int): IntArray {
